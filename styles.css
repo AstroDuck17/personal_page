@@ -577,8 +577,9 @@ footer {
     }
     
     .container {
-        padding: 0 !important;
-        margin: 0 auto;
+        padding: 0 !important; /* Remove left/right padding */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
         width: 100%;
     }
     
