@@ -410,7 +410,7 @@ section h2:after {
 footer {
     background-color: #2c3e50;
     color: #fff;
-    padding: 40px 0;
+    padding: 20px 0;
     text-align: center;
 }
 
@@ -455,6 +455,34 @@ footer {
 .copyright {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap; /* prevent wrapping */
+}
+.footer-contact .social-links,
+.footer-contact .contact-info {
+    white-space: nowrap;
+}
+.footer-contact .contact-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+.footer-contact .contact-info p {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-link {
+    margin: 0 5px;
 }
 
 /* Responsive Styles */
@@ -549,7 +577,8 @@ footer {
     }
     
     .container {
-        padding: 0 10px;
+        padding: 0 !important;
+        margin: 0 auto;
         width: 100%;
     }
     
