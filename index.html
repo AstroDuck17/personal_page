@@ -290,7 +290,13 @@
     <script>
         // Horizontal scroll functionality using arrow buttons.
         const gallery = document.getElementById('gallery');
-        const scrollAmount = 430; // one image width (400px) + gap (30px)
+        let scrollAmount;
+        if(window.innerWidth <= 480) {
+            // On phone, scroll by one image container's width plus the gap (15px)
+            scrollAmount = gallery.querySelector('div').offsetWidth + 15;
+        } else {
+            scrollAmount = 430; // default for larger screens
+        }
         document.getElementById('leftArrow').addEventListener('click', () => {
             gallery.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         });
