@@ -598,6 +598,17 @@ footer {
     .timeline-item:nth-child(even) .timeline-date {
         margin-left: 40px !important;
     }
+
+    /* Increase right margin for the 1st and 3rd timeline items */
+    .timeline-item:nth-child(1) .timeline-date,
+    .timeline-item:nth-child(3) .timeline-date {
+        margin-right: 60px !important;
+    }
+    /* Ensure the even timeline items remain as before */
+    .timeline-item:nth-child(2) .timeline-date,
+    .timeline-item:nth-child(4) .timeline-date {
+        margin-left: 40px !important;
+    }
 }
 
 /* Text Analyzer Styles */
