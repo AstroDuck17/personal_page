@@ -695,11 +695,15 @@ footer {
     #text-input {
         width: 100%;
         box-sizing: border-box;
+        margin-left: 10px;
+        margin-right: 10px;
     }
     #analyze-btn, #clear-btn {
         width: 100%;
         box-sizing: border-box;
         margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
     .results-container {
         width: 100%;
