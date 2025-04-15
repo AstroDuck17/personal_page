@@ -555,11 +555,28 @@ footer {
     }
     
     .timeline-item {
-        padding: 8px 20px;
+        padding: 8px 10px !important;
+    }
+    
+    .timeline-content {
+        padding: 10px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .timeline-date {
+        z-index: 2;
+        position: relative;
+        font-size: 0.9rem !important;
+        padding: 4px 8px !important;
     }
     
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .hometown-image {
+        width: 100% !important;
+        height: auto !important;
     }
 }
 
@@ -756,8 +773,8 @@ body.dark-mode .skill-tag:hover {
     color: #fff;
 }
 body.dark-mode .cv-download {
-    background-color: #1a237e;
-    border-color: #1a237e;
+    background-color: #1a237e !important;
+    color: #fff !important;  /* force white text */
 }
 body.dark-mode .cv-download:hover {
     background-color: #0d133d;
@@ -847,4 +864,26 @@ body.dark-mode .timeline-date {
     color: #fff !important;  /* ensure year text is visible */
 }
 /* End Dark Mode Timeline Overrides */
+
+/* Fix for Text Analyzer result groups in dark mode */
+body.dark-mode .result-group {
+    background-color: #1e1e1e !important;
+    border: 1px solid #1a237e !important;
+}
 /* End Comprehensive Dark Mode Overrides */
+
+/* Force CV button text to white in dark mode */
+body.dark-mode .cv-download {
+    color: #fff !important;
+}
+
+/* Enhanced Dark Mode Header & Footer Separation */
+body.dark-mode header {
+    background: #1c1c1c !important;
+    border-bottom: 3px solid #1a237e;
+}
+body.dark-mode footer {
+    background: #1c1c1c !important;
+    border-top: 3px solid #1a237e;
+}
+/* End Enhanced Dark Mode Header & Footer Separation */
