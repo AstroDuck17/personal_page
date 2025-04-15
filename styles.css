@@ -574,12 +574,12 @@ footer {
     
     .hometown-gallery {
         width: 100% !important;
-        gap: 15px; /* Reduced gap */
+        gap: 0 !important;
+        overflow-x: hidden;
     }
-    
-    .hometown-image {
-        width: 100% !important;
-        height: auto !important;
+    .hometown-gallery > div {
+        min-width: 100% !important;
+        box-sizing: border-box;
     }
     
     .hometown-caption {
