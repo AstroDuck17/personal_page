@@ -620,6 +620,13 @@ footer {
     .timeline-item:nth-child(4) .timeline-date {
         margin-left: 40px !important;
     }
+
+    /* Shift odd timeline dates so they resemble the even ones */
+    .timeline-item:nth-child(odd) .timeline-date {
+        position: relative;
+        left: 50px !important;
+        margin-right: 0 !important;
+    }
 }
 
 /* Text Analyzer Styles */
