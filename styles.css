@@ -560,23 +560,31 @@ footer {
     
     .timeline-content {
         padding: 10px !important;
-        font-size: 0.9rem !important;
+        font-size: 0.85rem !important;
     }
     
     .timeline-date {
-        z-index: 2;
-        position: relative;
-        font-size: 0.9rem !important;
-        padding: 4px 8px !important;
+        font-size: 0.8rem !important;
+        padding: 4px 6px !important;
     }
     
     .skills-grid {
         grid-template-columns: 1fr;
     }
     
+    .hometown-gallery {
+        width: 100% !important;
+        gap: 15px; /* Reduced gap */
+    }
+    
     .hometown-image {
         width: 100% !important;
         height: auto !important;
+    }
+    
+    .hometown-caption {
+        font-size: 0.8rem !important;
+        margin-top: 5px !important;
     }
 }
 
