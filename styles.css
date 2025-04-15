@@ -498,6 +498,10 @@ footer {
     .timeline-item:nth-child(even) .timeline-dot {
         left: 18px;
     }
+
+    nav {
+        position: static; /* Remove sticky behavior on mobile */
+    }
 }
 
 @media (max-width: 480px) {
@@ -831,4 +835,16 @@ body.dark-mode .social-link {
 body.dark-mode .profile-image {
     border: 5px solid #1a237e !important;
 }
+
+/* Dark Mode Timeline Overrides */
+body.dark-mode .timeline-content {
+    background-color: #1e1e1e !important;  /* dark grey background for timeline boxes */
+    color: #eee !important;
+    border: 1px solid #1a237e !important;
+}
+body.dark-mode .timeline-date {
+    background-color: #1a237e !important;
+    color: #fff !important;  /* ensure year text is visible */
+}
+/* End Dark Mode Timeline Overrides */
 /* End Comprehensive Dark Mode Overrides */
