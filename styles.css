@@ -2,21 +2,22 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #333; /* dark text */
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: #f5f5f5; /* light background */
 }
 
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
+    background-color: transparent;
 }
 
 /* Header */
 header {
-    background: linear-gradient(135deg, #2c3e50, #3498db);
+    background: linear-gradient(135deg, #2c3e50, #3498db); /* dark blue gradient */
     color: #fff;
     padding: 60px 0;
     text-align: center;
@@ -73,7 +74,7 @@ nav li {
 }
 
 nav a {
-    color: #fff;
+    color: #eee;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -87,6 +88,7 @@ nav a:hover {
 /* Sections */
 section {
     padding: 60px 0;
+    background-color: #fff;
 }
 
 section h2 {
@@ -122,7 +124,7 @@ section h2:after {
 
 /* Hometown Section */
 #hometown {
-    background-color: #f5f5f5;
+    background-color: #fff;
 }
 
 .gallery-container {
@@ -277,16 +279,16 @@ section h2:after {
 
 /* Skills Section Styles */
 #skills {
-    background-color: #fff; /* white background */
+    background-color: #fff;
     padding: 60px 0;
-    color: #333; /* dark text */
+    color: #333;
 }
 
 #skills h2 {
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 40px;
-    color: #3498db; /* blue heading */
+    color: #2c3e50;
     position: relative;
 }
 
@@ -383,6 +385,7 @@ section h2:after {
     transition: all 0.3s ease;
     margin-top: 20px;
     box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+    border-color: #3498db;
 }
 
 .cv-download:hover {
@@ -413,7 +416,7 @@ footer {
     padding: 10px 15px; /* allows the text to fit better */
     background-color: #fff;
     border-radius: 30px;
-    color: #2c3e50;
+    color: #3498db;
     text-align: center;
     margin: 5px; /* reduced margin for a tighter fit */
     font-size: 0.9rem;
@@ -431,7 +434,7 @@ footer {
 }
 
 .footer-nav a {
-    color: #fff;
+    color: #eee;
     margin: 0 15px;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -555,9 +558,10 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
 /* Text Analyzer Styles */
 #text-analyzer {
-    background-color: #f5f5f5;
+    background-color: #fff;
     padding: 60px 0;
 }
 
@@ -686,3 +690,145 @@ footer {
         margin-left: 0;
     }
 }
+
+/* Dark Mode Styles (applied when .dark-mode class is on body) */
+body.dark-mode {
+    background-color: #121212; /* lighter black */
+    color: #eee;
+}
+body.dark-mode header {
+    background: linear-gradient(135deg, #121212, #1a237e);
+    color: #eee;
+}
+body.dark-mode nav {
+    background-color: #121212;
+}
+body.dark-mode nav a {
+    color: #eee;
+}
+body.dark-mode section {
+    background-color: #121212;
+}
+body.dark-mode section h2 {
+    color: #1a237e;
+}
+body.dark-mode section h2:after {
+    background-color: #1a237e;
+}
+body.dark-mode .timeline::after {
+    background-color: #1a237e;
+}
+body.dark-mode .timeline-date {
+    background-color: #1a237e;
+}
+body.dark-mode #skills {
+    background-color: #121212;
+    color: #eee;
+}
+body.dark-mode #skills h2 {
+    color: #1a237e;
+}
+body.dark-mode #skills h2:after {
+    background-color: #1a237e;
+}
+body.dark-mode .skills-box {
+    background-color: #121212;
+    border-color: #1a237e;
+    color: #eee;
+}
+body.dark-mode .skills-box:hover {
+    box-shadow: 0 10px 20px rgba(26,35,126,0.3);
+}
+body.dark-mode .skills-header h3 {
+    color: #1a237e;
+}
+body.dark-mode .skill-tag {
+    background-color: #121212;
+    color: #1a237e;
+    border-color: #1a237e;
+}
+body.dark-mode .skill-tag:hover {
+    background-color: #1a237e;
+    color: #fff;
+}
+body.dark-mode .cv-download {
+    background-color: #1a237e;
+    border-color: #1a237e;
+}
+body.dark-mode .cv-download:hover {
+    background-color: #0d133d;
+}
+body.dark-mode footer {
+    background-color: #121212;
+}
+body.dark-mode .social-link {
+    background-color: #fff;
+    color: #1a237e;
+}
+body.dark-mode .social-link:hover {
+    background-color: #1a237e;
+    color: #fff;
+}
+body.dark-mode .footer-nav a {
+    color: #eee;
+}
+body.dark-mode .footer-nav a:hover {
+    color: #1a237e;
+}
+
+/* Comprehensive Dark Mode Overrides */
+body.dark-mode {
+    background-color: #121212;
+    color: #eee;
+}
+
+body.dark-mode header,
+body.dark-mode nav,
+body.dark-mode section,
+body.dark-mode footer {
+    background-color: #121212 !important;
+    color: #eee !important;
+}
+
+body.dark-mode * {
+    background-color: transparent;
+    color: inherit;
+}
+
+/* Override specific default backgrounds and borders */
+body.dark-mode header a,
+body.dark-mode nav a,
+body.dark-mode section h2,
+body.dark-mode .timeline-date,
+body.dark-mode .skills-header h3,
+body.dark-mode .cv-download,
+body.dark-mode .footer-nav a {
+    color: #1a237e !important; /* dark blue accent */
+}
+
+body.dark-mode section h2:after,
+body.dark-mode .timeline::after {
+    background-color: #1a237e !important;
+}
+
+body.dark-mode .skills-box,
+body.dark-mode .skill-tag,
+body.dark-mode .timeline-dot,
+body.dark-mode .cv-download {
+    border-color: #1a237e !important;
+}
+
+body.dark-mode .cv-download:hover {
+    background-color: #0d133d !important;
+}
+
+body.dark-mode .social-link {
+    background-color: #fff !important;
+    color: #1a237e !important;
+}
+  
+/* Ensure profile image border also adapts */
+body.dark-mode .profile-image {
+    border: 5px solid #1a237e !important;
+}
+/* End Comprehensive Dark Mode Overrides */
