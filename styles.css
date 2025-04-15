@@ -593,6 +593,17 @@ footer {
     }
 
     .timeline-item:nth-child(odd) .timeline-date {
+        margin-right: 100px !important;
+        position: relative;
+        z-index: 2;
+    }
+    .timeline-item:nth-child(even) .timeline-date {
+        margin-left: 80px !important;
+        position: relative;
+        z-index: 2;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-date {
         margin-right: 40px !important;
     }
     .timeline-item:nth-child(even) .timeline-date {
