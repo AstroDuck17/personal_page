@@ -641,6 +641,53 @@ footer {
         margin-left: 20px;
         margin-right: 20px;
     }
+
+    /* Center and add side padding for header caption */
+    .header-content {
+        text-align: center;
+        padding: 0 10px;
+    }
+    /* Center and add side padding for About section content */
+    .about-content {
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    /* Adjust Text Analyzer boundaries */
+    #text-analyzer {
+        padding: 30px 10px;
+    }
+    #text-analyzer .input-container {
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    #text-input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    #analyze-btn, #clear-btn {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+    .results-container {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+
+    /* Ensure the skills section stays within view */
+    .skills-container,
+    .skills-grid {
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .skills-box {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 10px 0;
+    }
 }
 
 /* Text Analyzer Styles */
@@ -699,7 +746,7 @@ footer {
     background-color: #c0392b;
 }
 
-.input-container {
+input-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
