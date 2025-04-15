@@ -27,6 +27,7 @@
             <li><a href="#hometown">Hometown</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#text-analyzer">Text Analyzer</a></li>
             <li><a href="#cv">CV</a></li>
         </ul>
     </nav>
@@ -222,7 +223,45 @@
             <a href="#" class="cv-download">Download CV (PDF)</a>
         </div>
     </section>
-    
+    <!-- Text Analyzer Section -->
+    <section id="text-analyzer">
+        <div class="container">
+            <h2>Text Analyzer</h2>
+            <div class="analyzer-container">
+                <div class="input-container">
+                    <textarea id="text-input" placeholder="Enter or paste your text here (10,000+ words recommended)..."></textarea>
+                    <button id="analyze-btn">Analyze Text</button>
+                    <button id="clear-btn">Clear</button>
+                </div>
+                <div class="results-container">
+                    <div class="result-group">
+                        <h3>Basic Statistics</h3>
+                        <div id="basic-stats" class="result-content">
+                            <!-- Basic stats will be inserted here -->
+                        </div>
+                    </div>
+                    <div class="result-group">
+                        <h3>Pronouns</h3>
+                        <div id="pronouns-stats" class="result-content">
+                            <!-- Pronouns stats will be inserted here -->
+                        </div>
+                    </div>
+                    <div class="result-group">
+                        <h3>Prepositions</h3>
+                        <div id="prepositions-stats" class="result-content">
+                            <!-- Prepositions stats will be inserted here -->
+                        </div>
+                    </div>
+                    <div class="result-group">
+                        <h3>Indefinite Articles</h3>
+                        <div id="articles-stats" class="result-content">
+                            <!-- Articles stats will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -236,6 +275,7 @@
                 <a href="#hometown">Hometown</a>
                 <a href="#education">Education</a>
                 <a href="#skills">Skills</a>
+                <a href="#text-analyzer">Text Analyzer</a>
                 <a href="#cv">CV</a>
             </div>
             <div class="copyright">
@@ -255,5 +295,6 @@
         });
     </script>
     <script src="tracking.js"></script>
+    <script src="text-analyzer.js"></script>
 </body>
 </html>
