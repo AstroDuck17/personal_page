@@ -722,6 +722,27 @@ footer {
         box-sizing: border-box;
         margin: 10px 0;
     }
+
+    .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Improve text analyzer spacing on phone */
+    #text-analyzer .input-container {
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    #text-input,
+    #analyze-btn,
+    #clear-btn {
+        max-width: calc(100% - 40px);
+        margin: 10px auto;
+        display: block;
+    }
 }
 
 /* Text Analyzer Styles */
