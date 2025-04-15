@@ -277,13 +277,13 @@ section h2:after {
     margin-bottom: 5px;
 }
 
-/* Add horizontal padding between the timeline vertical bar and timeline content boxes */
+/* Add horizontal padding between the timeline vertical bar and timeline content boxes
 .timeline-item:nth-child(odd) .timeline-content {
     margin-right: 20px;
 }
 .timeline-item:nth-child(even) .timeline-content {
     margin-left: 20px;
-}
+} */
 
 /* Skills Section Styles */
 #skills {
@@ -634,6 +634,12 @@ footer {
         position: relative;
         left: 50px !important;
         margin-right: 0 !important;
+    }
+
+    /* Add horizontal padding between the timeline vertical bar and timeline content boxes on phone */
+    .timeline-item .timeline-content {
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 
