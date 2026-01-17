@@ -14,7 +14,7 @@
                 <img src="images/Profilepic.jpg" alt="Profile Picture" class="profile-image">
                 <div class="header-content">
                     <h1>Yashav Bhatnagar</h1>
-                    <h2>College Student & Technology Enthusiast</h2>
+                    <h2>Computer Science Student @ IIIT Hyderabad | Student Researcher @ Smart City Living Lab</h2>
                 </div>
             </div>
         </div>
@@ -26,10 +26,11 @@
             <li><a href="#about">About</a></li>
             <li><a href="#hometown">Hometown</a></li>
             <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#text-analyzer">Text Analyzer</a></li>
             <li><a href="#cv">CV</a></li>
-            <li><button id="dark-mode-toggle" style="margin-left:20px; padding:8px 12px; border:none; background-color:#3498db; color:#fff; border-radius:4px; cursor:pointer;">Dark Mode</button></li>
+            <li><button id="dark-mode-toggle" style="margin-left:20px; padding:8px 12px; border:none; background-color:#8B7355; color:#fff; border-radius:4px; cursor:pointer;">Dark Mode</button></li>
         </ul>
         <!-- Added Dark Mode Toggle Button -->
     </nav>
@@ -39,7 +40,9 @@
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
-                <p>Hello! I'm Yashav Bhatnagar, a college student with a curious mind and a passion for exploring different areas of technology. I'm interested in working with both hardware and software, and I enjoy learning how things work by getting hands-on with projects and new ideas. Outside of academics, I like to play the piano and travel whenever I get the chance. I also like to draw and want to try new drawing styles as I improve.</p>
+                <p>Hello! I'm Yashav Bhatnagar, a Computer Science student at IIIT Hyderabad (CGPA: 8.19) and a Student Researcher at the Smart City Living Lab. I'm passionate about systems programming, embedded systems, and distributed computing. I enjoy working on challenging projects that span both hardware and software domains, from building voice-controlled microbots to architecting distributed file systems.</p>
+                <p>My experience ranges from developing hardware test platforms with multiple communication protocols to implementing TinyML solutions on resource-constrained microcontrollers. I'm particularly interested in low-level systems, real-time data processing, and building scalable, fault-tolerant architectures.</p>
+                <p>Outside of academics, I like to play the piano and travel whenever I get the chance. I also enjoy drawing and want to explore new drawing styles as I improve.</p>
             </div>
         </div>
     </section>
@@ -101,10 +104,11 @@
                 <!-- BTech -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date">Currently</div>
+                    <div class="timeline-date">2024 - 2028</div>
                     <div class="timeline-content">
-                        <h3>Pursuing BTech in Computer Science</h3>
-                        <p>International Institute of Information Technology Hyderabad</p>
+                        <h3>B.Tech in Computer Science and Engineering</h3>
+                        <p>International Institute of Information Technology (IIIT), Hyderabad</p>
+                        <p><strong>CGPA:</strong> 8.19</p>
                     </div>
                 </div>
                 
@@ -115,8 +119,8 @@
                     <div class="timeline-content">
                         <h3>JEE Performance</h3>
                         <ul>
-                            <li><strong>JEE Advanced:</strong> Rank 3949</li>
-                            <li><strong>JEE Mains:</strong> Rank 1189</li>
+                            <li><strong>JEE Advanced:</strong> All India Rank 3949 among 1.8 lakh qualified candidates</li>
+                            <li><strong>JEE Mains:</strong> All India Rank 1189 (top 0.1%) among 14 lakh candidates</li>
                         </ul>
                     </div>
                 </div>
@@ -146,6 +150,83 @@
         </div>
     </section>
     
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-container">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3>Student Researcher</h3>
+                            <p class="company">Smart City Living Lab, IIIT Hyderabad</p>
+                        </div>
+                        <div class="experience-date">Feb 2024 - Present</div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li><strong>Hardware Test Jig:</strong> Developed a comprehensive testing platform on Raspberry Pi 3 using Python to validate hardware communication protocols including <strong>I2C, SPI, UART, PWM, ADC, GPIO,</strong> and <strong>RS485</strong>.</li>
+                            <li>Implemented a unified multi-interface architecture supporting a <strong>CLI</strong> for local testing, a <strong>Tkinter GUI</strong> for desktop usage, and a <strong>FastAPI</strong> web interface for remote network accessibility.</li>
+                            <li>Engineered real-time data visualization using <strong>Server-Sent Events (SSE)</strong> and utilized threading/asyncio to ensure non-blocking hardware interaction and reliable fault logging.</li>
+                            <li>Worked extensively on RS485 Modbus RTU communication for industrial sensor integration. <a href="https://github.com/AstroDuck17/Hardware_Test_Jig.git" target="_blank">[GitHub]</a></li>
+                            <li>Presented about OneM2M framework and a basic sensor-actuator project at Institute Research Fest (Spring 2025).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <!-- Network File System -->
+                <div class="project-item">
+                    <div class="project-header">
+                        <h3>Network File System</h3>
+                        <div class="project-tech">C | POSIX Threads | Socket Programming | Concurrency</div>
+                    </div>
+                    <div class="project-description">
+                        <ul>
+                            <li>Architected and implemented a modular distributed document collaboration system with sentence-level locking, real-time file streaming, and structured fault logging; designed to scale horizontally by adding additional name servers / storage servers without downtime.</li>
+                            <li>Designed the system for scalability and reliability using Git-inspired checkpointing, revert functionality, and asynchronous data replication across storage servers to enable granular recovery from failures. <a href="https://github.com/AstroDuck17/Network_File_system" target="_blank">[GitHub]</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Audio-Guided Microbot -->
+                <div class="project-item">
+                    <div class="project-header">
+                        <h3>Audio-Guided Microbot</h3>
+                        <div class="project-tech">ESP32-S3 | Embedded C/C++ | TinyML | CNNs | BLE/LoRa</div>
+                    </div>
+                    <div class="project-description">
+                        <ul>
+                            <li>Built a fully offline, voice-controlled microbot by deploying an on-device CNN-based Keyword Spotting (KWS) pipeline on ESP32-S3 under tight memory and power consumption constraints. Highly skeletal and robust for modular implementation for lot more scenarios, along with robust online communication methods using BLE/LoRa.</li>
+                            <li>Implemented a multi-metric speech gate (SNR, RMS energy, ZCR) to skip pre-processing stages during silence/noise, reducing average compute and extending battery life.</li>
+                            <li>Deployed an 8-bit quantized CNN with ~81 kB model size and ~50 kB tensor arena; achieved an average of >93.87% validation accuracy under a variety of scenarios and ~102 ms command-to-actuation latency even with the MCU underclocked for extended power savings. <a href="https://github.com/AstroDuck17/Audio_Guided_Microbot" target="_blank">[GitHub]</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- C-Shell -->
+                <div class="project-item">
+                    <div class="project-header">
+                        <h3>C-Shell</h3>
+                        <div class="project-tech">C | Unix Systems Programming</div>
+                    </div>
+                    <div class="project-description">
+                        <ul>
+                            <li>Built a custom Unix shell from scratch supporting advanced features including I/O redirection, pipes, signal handling, background/foreground process management, and job control, demonstrating deep understanding of system calls and process management. <a href="https://github.com/AstroDuck17/C_Shell" target="_blank">[GitHub]</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Skills Section - UPDATED WITH EXPERTISE LEVELS -->
     <section id="skills">
         <div class="container">
@@ -160,56 +241,61 @@
                             <h3>Programming Languages</h3>
                         </div>
                         <div class="skills-tags">
-                            <span class="skill-tag">JavaScript <small>(Beginner)</small></span>
-                            <span class="skill-tag">TypeScript <small>(Beginner)</small></span>
-                            <span class="skill-tag">Python <small>(Beginner)</small></span>
-                            <span class="skill-tag">Java <small>(Beginner)</small></span>
-                            <span class="skill-tag">C/C++ <small>(Beginner)</small></span>
-                            <span class="skill-tag">SQL <small>(Beginner)</small></span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Assembly</span>
                         </div>
                     </div>
                     
-                    <!-- Frameworks & Libraries Box -->
+                    <!-- Technologies & Tools Box -->
                     <div class="skills-box">
                         <div class="skills-header">
                             <i class="skills-icon">⚙️</i>
-                            <h3>Frameworks & Libraries</h3>
+                            <h3>Technologies & Tools</h3>
                         </div>
                         <div class="skills-tags">
-                            <span class="skill-tag">React <small>(Beginner)</small></span>
-                            <span class="skill-tag">Node.js <small>(Beginner)</small></span>
-                            <span class="skill-tag">Express <small>(Beginner)</small></span>
-                            <span class="skill-tag">Flutter <small>(Beginner)</small></span>
-                            <span class="skill-tag">TailwindCSS <small>(Beginner)</small></span>
-                            <span class="skill-tag">TensorFlow/PyTorch <small>(Beginner)</small></span>
+                            <span class="skill-tag">Linux</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">PyTorch</span>
                         </div>
                     </div>
                     
-                    <!-- Cloud & DevOps Box -->
+                    <!-- Systems & Embedded Box -->
                     <div class="skills-box">
                         <div class="skills-header">
-                            <i class="skills-icon">☁️</i>
-                            <h3>Cloud & DevOps</h3>
+                            <i class="skills-icon">🔧</i>
+                            <h3>Systems & Embedded</h3>
                         </div>
                         <div class="skills-tags">
-                            <span class="skill-tag">AWS <small>(Beginner)</small></span>
-                            <span class="skill-tag">Firebase <small>(Beginner)</small></span>
-                            <span class="skill-tag">Docker <small>(Beginner)</small></span>
-                            <span class="skill-tag">GitHub Actions <small>(Beginner)</small></span>
-                            <span class="skill-tag">Git <small>(Beginner)</small></span>
+                            <span class="skill-tag">POSIX Threads</span>
+                            <span class="skill-tag">Socket Programming</span>
+                            <span class="skill-tag">Embedded C/C++</span>
+                            <span class="skill-tag">TinyML</span>
+                            <span class="skill-tag">ESP32</span>
                         </div>
                     </div>
                     
-                    <!-- Hardware Skills Box -->
+                    <!-- Hardware Protocols Box -->
                     <div class="skills-box">
                         <div class="skills-header">
                             <i class="skills-icon">🔌</i>
-                            <h3>Hardware Skills</h3>
+                            <h3>Hardware Protocols</h3>
                         </div>
                         <div class="skills-tags">
-                            <span class="skill-tag">Communication Protocols <small>(Beginner)</small></span>
-                            <span class="skill-tag">Adaptive to New Sensors <small>(Beginner)</small></span>
-                            <span class="skill-tag">Comfortable with Hardware <small>(Beginner)</small></span>
+                            <span class="skill-tag">I2C</span>
+                            <span class="skill-tag">SPI</span>
+                            <span class="skill-tag">UART</span>
+                            <span class="skill-tag">PWM</span>
+                            <span class="skill-tag">GPIO</span>
+                            <span class="skill-tag">ADC</span>
+                            <span class="skill-tag">RS485</span>
+                            <span class="skill-tag">Modbus RTU</span>
+                            <span class="skill-tag">BLE/LoRa</span>
                         </div>
                     </div>
                 </div>
@@ -225,45 +311,7 @@
             <a href="Resume-Yashav.pdf" target="_blank" class="cv-download">Download CV (PDF)</a>
         </div>
     </section>
-    <!-- Text Analyzer Section -->
-    <section id="text-analyzer">
-        <div class="container">
-            <h2>Text Analyzer</h2>
-            <div class="analyzer-container">
-                <div class="input-container">
-                    <textarea id="text-input" placeholder="Enter or paste your text here (10,000+ words recommended)..."></textarea>
-                    <button id="analyze-btn">Analyze Text</button>
-                    <button id="clear-btn">Clear</button>
-                </div>
-                <div class="results-container">
-                    <div class="result-group">
-                        <h3>Basic Statistics</h3>
-                        <div id="basic-stats" class="result-content">
-                            <!-- Basic stats will be inserted here -->
-                        </div>
-                    </div>
-                    <div class="result-group">
-                        <h3>Pronouns</h3>
-                        <div id="pronouns-stats" class="result-content">
-                            <!-- Pronouns stats will be inserted here -->
-                        </div>
-                    </div>
-                    <div class="result-group">
-                        <h3>Prepositions</h3>
-                        <div id="prepositions-stats" class="result-content">
-                            <!-- Prepositions stats will be inserted here -->
-                        </div>
-                    </div>
-                    <div class="result-group">
-                        <h3>Indefinite Articles</h3>
-                        <div id="articles-stats" class="result-content">
-                            <!-- Articles stats will be inserted here -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -271,19 +319,19 @@
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/yashav-bhatnagar-973853320/" class="social-link">Linkedin</a>
                     <a href="https://github.com/AstroDuck17" class="social-link">Github</a>
-                    <a href="https://www.instagram.com/yashav_17/" class="social-link">Instagram</a>
                     <a href="" class="social-link"> 9755978269</a>
                     <a href="" class="social-link">yashav.bhatnagar@gmail.com</a>
                 </div>
             </div>
-            <div class="footer-nav">
+            <!-- <div class="footer-nav">
                 <a href="#about">About</a>
                 <a href="#hometown">Hometown</a>
                 <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
-                <a href="#text-analyzer">Text Analyzer</a>
                 <a href="#cv">CV</a>
-            </div>
+            </div> -->
             <div class="copyright">
                 &copy; 2025 Yashav Bhatnagar. All rights reserved :>.
             </div>
@@ -314,6 +362,5 @@
         });
     </script>
     <script src="tracking.js"></script>
-    <script src="text-analyzer.js"></script>
 </body>
 </html>
