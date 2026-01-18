@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yashav Bhatnagar - Contact</title>
+    <link rel="stylesheet" href="new-styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="blue-square">■</span>
+                <span class="name">Yashav Bhatnagar</span>
+                <span class="title">/ COMPUTER SCIENCE STUDENT</span>
+            </div>
+            <nav>
+                <a href="about.html">ABOUT ME</a>
+                <a href="resume.html">RESUME</a>
+                <a href="projects.html">PROJECTS</a>
+                <a href="contact.html" class="active">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="contact-page">
+        <div class="contact-container">
+            <h1 class="page-title"><span class="blue-square">■</span>Let's talk</h1>
+            
+            <form class="contact-form" action="mailto:yashav.bhatnagar@students.iiit.ac.in" method="post" enctype="text/plain">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p class="footer-copyright">© 2026 by Yashav Bhatnagar :></p>
+            <div class="footer-links">
+                <div class="footer-group">
+                    <p class="footer-label">Call</p>
+                    <p class="footer-value">9755978269</p>
+                </div>
+                <div class="footer-group">
+                    <p class="footer-label">Write</p>
+                    <p class="footer-value">yashav.bhatnagar@students.iiit.ac.in</p>
+                </div>
+                <div class="footer-group">
+                    <div class="footer-social">
+                        <a href="https://github.com/AstroDuck17" target="_blank" title="GitHub"><img src="images/github-mark.svg" alt="GitHub" class="github-icon"></a>
+                        <a href="https://www.linkedin.com/in/yashav-bhatnagar-973853320/" target="_blank" title="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yashav Bhatnagar - Projects</title>
+    <link rel="stylesheet" href="new-styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span class="blue-square">■</span>
+                <span class="name">Yashav Bhatnagar</span>
+                <span class="title">/ COMPUTER SCIENCE STUDENT</span>
+            </div>
+            <nav>
+                <a href="about.html">ABOUT ME</a>
+                <a href="resume.html">RESUME</a>
+                <a href="projects.html" class="active">PROJECTS</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="projects-page">
+        <div class="projects-container">
+            <h1 class="page-title"><span class="blue-square">■</span>Projects</h1>
+            <p class="projects-intro">Here are some of the key projects I've worked on, showcasing my skills in systems programming, embedded systems, and distributed computing.</p>
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-marker"></div>
+                    <h3 class="project-name">Network File System</h3>
+                    <p class="project-role">C | POSIX Threads | Socket Programming | Concurrency</p>
+                    <p class="project-description">Architected and implemented a modular distributed document collaboration system with sentence-level locking, real-time file streaming, and structured fault logging; designed to scale horizontally by adding additional name servers / storage servers without downtime.</p>
+                    <p class="project-description">Designed the system for scalability and reliability using Git-inspired checkpointing, revert functionality, and asynchronous data replication across storage servers to enable granular recovery from failures.</p>
+                    <a href="https://github.com/AstroDuck17/Network_File_system" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-marker"></div>
+                    <h3 class="project-name">Audio-Guided Microbot</h3>
+                    <p class="project-role">ESP32-S3 | Embedded C/C++ | TinyML | CNNs | BLE/LoRa</p>
+                    <p class="project-description">Built a fully offline, voice-controlled microbot by deploying an on-device CNN-based Keyword Spotting (KWS) pipeline on ESP32-S3 under tight memory and power consumption constraints. Highly skeletal and robust for modular implementation for lot more scenarios, along with robust online communication methods using BLE/LoRa.</p>
+                    <p class="project-description">Implemented a multi-metric speech gate (SNR, RMS energy, ZCR) to skip pre-processing stages during silence/noise, reducing average compute and extending battery life.</p>
+                    <p class="project-description">Deployed an 8-bit quantized CNN with ~81 kB model size and ~50 kB tensor arena; achieved an average of >93.87% validation accuracy under a variety of scenarios and ~102 ms command-to-actuation latency even with the MCU underclocked for extended power savings.</p>
+                    <a href="https://github.com/AstroDuck17/Audio_Guided_Microbot" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-marker"></div>
+                    <h3 class="project-name">C-Shell</h3>
+                    <p class="project-role">C | Unix Systems Programming</p>
+                    <p class="project-description">Built a custom Unix shell from scratch supporting advanced features including I/O redirection, pipes, signal handling, background/foreground process management, and job control, demonstrating deep understanding of system calls and process management.</p>
+                    <a href="https://github.com/AstroDuck17/C_Shell" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p class="footer-copyright">© 2026 by Yashav Bhatnagar :></p>
+            <div class="footer-links">
+                <div class="footer-group">
+                    <p class="footer-label">Call</p>
+                    <p class="footer-value">9755978269</p>
+                </div>
+                <div class="footer-group">
+                    <p class="footer-label">Write</p>
+                    <p class="footer-value">yashav.bhatnagar@students.iiit.ac.in</p>
+                </div>
+                <div class="footer-group">
+                    <div class="footer-social">
+                        <a href="https://github.com/AstroDuck17" target="_blank" title="GitHub"><img src="images/github-mark.svg" alt="GitHub" class="github-icon"></a>
+                        <a href="https://www.linkedin.com/in/yashav-bhatnagar-973853320/" target="_blank" title="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
