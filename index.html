@@ -3,364 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yashav Bhatnagar- Personal Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Yashav Bhatnagar - About Me</title>
+    <link rel="stylesheet" href="new-styles.css">
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="container">
-            <div class="profile-container">
-                <img src="images/Profilepic.jpg" alt="Profile Picture" class="profile-image">
-                <div class="header-content">
-                    <h1>Yashav Bhatnagar</h1>
-                    <h2>Computer Science Student @ IIIT Hyderabad | Student Researcher @ Smart City Living Lab</h2>
-                </div>
+        <div class="header-container">
+            <div class="logo">
+                <span class="blue-square">■</span>
+                <span class="name">Yashav Bhatnagar</span>
+                <span class="title">/ COMPUTER SCIENCE STUDENT</span>
             </div>
+            <nav>
+                <a href="index.html" class="active">ABOUT ME</a>
+                <a href="resume.html">RESUME</a>
+                <a href="projects.html">PROJECTS</a>
+                <a href="contact.html">CONTACT</a>
+            </nav>
         </div>
     </header>
-    
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#hometown">Hometown</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#cv">CV</a></li>
-            <li><button id="dark-mode-toggle" style="margin-left:20px; padding:8px 12px; border:none; background-color:#8B7355; color:#fff; border-radius:4px; cursor:pointer;">Dark Mode</button></li>
-        </ul>
-        <!-- Added Dark Mode Toggle Button -->
-    </nav>
-    
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
+
+    <!-- Main Content -->
+    <main class="about-page">
+        <div class="content-wrapper">
+            <div class="profile-card">
+                <img src="images/Profilepic.jpg" alt="Yashav Bhatnagar" class="profile-photo">
+                <h2 class="profile-name">Yashav<br>Bhatnagar</h2>
+                <div class="divider"></div>
+                <p class="profile-title">COMPUTER SCIENCE STUDENT</p>
+                <div class="social-icons">
+                    <a href="mailto:yashav.bhatnagar@students.iiit.ac.in" title="Email">@</a>
+                    <a href="https://github.com/AstroDuck17" target="_blank" title="GitHub"><img src="images/github-mark.svg" alt="GitHub" class="github-icon"></a>
+                    <a href="https://www.linkedin.com/in/yashav-bhatnagar-973853320/" target="_blank" title="LinkedIn">in</a>
+                </div>
+            </div>
+
             <div class="about-content">
-                <p>Hello! I'm Yashav Bhatnagar, a Computer Science student at IIIT Hyderabad (CGPA: 8.19) and a Student Researcher at the Smart City Living Lab. I'm passionate about systems programming, embedded systems, and distributed computing. I enjoy working on challenging projects that span both hardware and software domains, from building voice-controlled microbots to architecting distributed file systems.</p>
-                <p>My experience ranges from developing hardware test platforms with multiple communication protocols to implementing TinyML solutions on resource-constrained microcontrollers. I'm particularly interested in low-level systems, real-time data processing, and building scalable, fault-tolerant architectures.</p>
-                <p>Outside of academics, I like to play the piano and travel whenever I get the chance. I also enjoy drawing and want to explore new drawing styles as I improve.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Hometown Section -->
-    <section id="hometown">
-        <div class="container">
-            <h2>Indore - My Hometown</h2>
-            <p class="hometown-caption">Click on image to know more</p>
-            <div class="gallery-container">
-                <button class="arrow left" id="leftArrow">&#8249;</button>
-                <div class="hometown-gallery" id="gallery">
-                    <!-- Rajwada -->
-                    <div>
-                        <a href="https://en.wikipedia.org/wiki/Rajwada" target="_blank">
-                            <img src="images/Indore_Rajwada.jpg" alt="Rajwada, Indore" class="hometown-image">
-                        </a>
-                        <p class="hometown-caption">Rajwada, a historic palace in Indore</p>
-                    </div>
-                    <!-- Lal Bagh Palace -->
-                    <div>
-                        <a href="https://en.wikipedia.org/wiki/Lalbagh_Palace" target="_blank">
-                            <img src="images/Indore_LalBagh.jpg" alt="Lal Bagh Palace, Indore" class="hometown-image">
-                        </a>
-                        <p class="hometown-caption">Lal Bagh Palace, a majestic monument</p>
-                    </div>
-                    <!-- Clean City View -->
-                    <div>
-                        <a href="https://www.youtube.com/watch?v=WnYIG2W7yXc&ab_channel=IndiaToday" target="_blank">
-                            <img src="images/Indore_cleanest.png" alt="Indore Cleanest" class="hometown-image">
-                        </a>
-                        <p class="hometown-caption">Indore, celebrated as the cleanest city</p>
-                    </div>
-                    <!-- Sarafa Bazaar -->
-                    <div>
-                        <a href="https://en.wikipedia.org/wiki/Sarafa_Bazaar" target="_blank">
-                            <img src="images/Indore_Sarafa.jpg" alt="Sarafa, Indore" class="hometown-image">
-                        </a>
-                        <p class="hometown-caption">Sarafa bazar, a foodies paradise</p>
-                    </div>
-                    <!-- Chappan dukan -->
-                    <div>
-                        <a href="https://food.ndtv.com/food-drinks/what-to-eat-at-indores-chappan-market-aka-56-dukan-a-complete-guide-3815123" target="_blank">
-                            <img src="images/Indore_chappan.jpeg" alt="Chappan, Indore" class="hometown-image">
-                        </a>
-                        <p class="hometown-caption">Chappan dukan, The Street food hub</p>
-                    </div>
+                <h1 class="page-title">Hello</h1>
+                <p class="subtitle">Here's who I am & what I do</p>
+                <div class="button-group">
+                    <a href="resume.html" class="btn btn-primary">RESUME</a>
+                    <a href="projects.html" class="btn btn-secondary">PROJECTS</a>
                 </div>
-                <button class="arrow right" id="rightArrow">&#8250;</button>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Education Section - UPDATED WITH VERTICAL TIMELINE -->
-    <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="timeline">
-                <!-- BTech -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2024 - 2028</div>
-                    <div class="timeline-content">
-                        <h3>B.Tech in Computer Science and Engineering</h3>
-                        <p>International Institute of Information Technology (IIIT), Hyderabad</p>
-                        <p><strong>CGPA:</strong> 8.19</p>
-                    </div>
-                </div>
-                
-                <!-- JEE Combined -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2024</div>
-                    <div class="timeline-content">
-                        <h3>JEE Performance</h3>
-                        <ul>
-                            <li><strong>JEE Advanced:</strong> All India Rank 3949 among 1.8 lakh qualified candidates</li>
-                            <li><strong>JEE Mains:</strong> All India Rank 1189 (top 0.1%) among 14 lakh candidates</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- CBSE Class XII -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2024</div>
-                    <div class="timeline-content">
-                        <h3>CBSE Class XII (PCM)</h3>
-                        <p>94.2%</p>
-                        <p>Prestige Public School</p>
-                    </div>
-                </div>
-                
-                <!-- CBSE Class X -->
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2022</div>
-                    <div class="timeline-content">
-                        <h3>CBSE Class X</h3>
-                        <p>96.2%</p>
-                        <p>Emerald Heights International School</p>
-                    </div>
+                <div class="about-text">
+                    <p>Hello! I'm Yashav Bhatnagar, currently pursuing a B.Tech in Computer Science at the International Institute of Information Technology, Hyderabad.</p>
+                    <p>My journey is driven by a passion for gaining knowledge and self-improvement. Academically, I am deeply interested in Machine Learning and am currently exploring the emerging possibilities of Quantum Computing.</p>
+                    <p>I believe that growth happens just as much outside the classroom as it does inside it. Whether I'm sitting at the piano, traveling to new destinations, or sketching, I am always looking to learn and refine my skills. I particularly enjoy drawing and am constantly experimenting to improve and evolve my artistic style.</p>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="experience-container">
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div>
-                            <h3>Student Researcher</h3>
-                            <p class="company">Smart City Living Lab, IIIT Hyderabad</p>
-                        </div>
-                        <div class="experience-date">Feb 2024 - Present</div>
-                    </div>
-                    <div class="experience-description">
-                        <ul>
-                            <li><strong>Hardware Test Jig:</strong> Developed a comprehensive testing platform on Raspberry Pi 3 using Python to validate hardware communication protocols including <strong>I2C, SPI, UART, PWM, ADC, GPIO,</strong> and <strong>RS485</strong>.</li>
-                            <li>Implemented a unified multi-interface architecture supporting a <strong>CLI</strong> for local testing, a <strong>Tkinter GUI</strong> for desktop usage, and a <strong>FastAPI</strong> web interface for remote network accessibility.</li>
-                            <li>Engineered real-time data visualization using <strong>Server-Sent Events (SSE)</strong> and utilized threading/asyncio to ensure non-blocking hardware interaction and reliable fault logging.</li>
-                            <li>Worked extensively on RS485 Modbus RTU communication for industrial sensor integration. <a href="https://github.com/AstroDuck17/Hardware_Test_Jig.git" target="_blank">[GitHub]</a></li>
-                            <li>Presented about OneM2M framework and a basic sensor-actuator project at Institute Research Fest (Spring 2025).</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-container">
-                <!-- Network File System -->
-                <div class="project-item">
-                    <div class="project-header">
-                        <h3>Network File System</h3>
-                        <div class="project-tech">C | POSIX Threads | Socket Programming | Concurrency</div>
-                    </div>
-                    <div class="project-description">
-                        <ul>
-                            <li>Architected and implemented a modular distributed document collaboration system with sentence-level locking, real-time file streaming, and structured fault logging; designed to scale horizontally by adding additional name servers / storage servers without downtime.</li>
-                            <li>Designed the system for scalability and reliability using Git-inspired checkpointing, revert functionality, and asynchronous data replication across storage servers to enable granular recovery from failures. <a href="https://github.com/AstroDuck17/Network_File_system" target="_blank">[GitHub]</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Audio-Guided Microbot -->
-                <div class="project-item">
-                    <div class="project-header">
-                        <h3>Audio-Guided Microbot</h3>
-                        <div class="project-tech">ESP32-S3 | Embedded C/C++ | TinyML | CNNs | BLE/LoRa</div>
-                    </div>
-                    <div class="project-description">
-                        <ul>
-                            <li>Built a fully offline, voice-controlled microbot by deploying an on-device CNN-based Keyword Spotting (KWS) pipeline on ESP32-S3 under tight memory and power consumption constraints. Highly skeletal and robust for modular implementation for lot more scenarios, along with robust online communication methods using BLE/LoRa.</li>
-                            <li>Implemented a multi-metric speech gate (SNR, RMS energy, ZCR) to skip pre-processing stages during silence/noise, reducing average compute and extending battery life.</li>
-                            <li>Deployed an 8-bit quantized CNN with ~81 kB model size and ~50 kB tensor arena; achieved an average of >93.87% validation accuracy under a variety of scenarios and ~102 ms command-to-actuation latency even with the MCU underclocked for extended power savings. <a href="https://github.com/AstroDuck17/Audio_Guided_Microbot" target="_blank">[GitHub]</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- C-Shell -->
-                <div class="project-item">
-                    <div class="project-header">
-                        <h3>C-Shell</h3>
-                        <div class="project-tech">C | Unix Systems Programming</div>
-                    </div>
-                    <div class="project-description">
-                        <ul>
-                            <li>Built a custom Unix shell from scratch supporting advanced features including I/O redirection, pipes, signal handling, background/foreground process management, and job control, demonstrating deep understanding of system calls and process management. <a href="https://github.com/AstroDuck17/C_Shell" target="_blank">[GitHub]</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Skills Section - UPDATED WITH EXPERTISE LEVELS -->
-    <section id="skills">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-container">
-                <!-- Main skills grid layout -->
-                <div class="skills-grid">
-                    <!-- Programming Languages Box -->
-                    <div class="skills-box">
-                        <div class="skills-header">
-                            <i class="skills-icon">💻</i>
-                            <h3>Programming Languages</h3>
-                        </div>
-                        <div class="skills-tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">C</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">Assembly</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Technologies & Tools Box -->
-                    <div class="skills-box">
-                        <div class="skills-header">
-                            <i class="skills-icon">⚙️</i>
-                            <h3>Technologies & Tools</h3>
-                        </div>
-                        <div class="skills-tags">
-                            <span class="skill-tag">Linux</span>
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Postman</span>
-                            <span class="skill-tag">REST APIs</span>
-                            <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">NumPy</span>
-                            <span class="skill-tag">PyTorch</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Systems & Embedded Box -->
-                    <div class="skills-box">
-                        <div class="skills-header">
-                            <i class="skills-icon">🔧</i>
-                            <h3>Systems & Embedded</h3>
-                        </div>
-                        <div class="skills-tags">
-                            <span class="skill-tag">POSIX Threads</span>
-                            <span class="skill-tag">Socket Programming</span>
-                            <span class="skill-tag">Embedded C/C++</span>
-                            <span class="skill-tag">TinyML</span>
-                            <span class="skill-tag">ESP32</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Hardware Protocols Box -->
-                    <div class="skills-box">
-                        <div class="skills-header">
-                            <i class="skills-icon">🔌</i>
-                            <h3>Hardware Protocols</h3>
-                        </div>
-                        <div class="skills-tags">
-                            <span class="skill-tag">I2C</span>
-                            <span class="skill-tag">SPI</span>
-                            <span class="skill-tag">UART</span>
-                            <span class="skill-tag">PWM</span>
-                            <span class="skill-tag">GPIO</span>
-                            <span class="skill-tag">ADC</span>
-                            <span class="skill-tag">RS485</span>
-                            <span class="skill-tag">Modbus RTU</span>
-                            <span class="skill-tag">BLE/LoRa</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CV Section -->
-    <section id="cv">
-        <div class="container">
-            <h2>Curriculum Vitae</h2>
-            <p>Download my complete CV to learn more about my experience and qualifications.</p>
-            <a href="Resume-Yashav.pdf" target="_blank" class="cv-download">Download CV (PDF)</a>
-        </div>
-    </section>
-    
+    </main>
+
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-contact">
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/yashav-bhatnagar-973853320/" class="social-link">Linkedin</a>
-                    <a href="https://github.com/AstroDuck17" class="social-link">Github</a>
-                    <a href="" class="social-link"> 9755978269</a>
-                    <a href="" class="social-link">yashav.bhatnagar@gmail.com</a>
+        <div class="footer-container">
+            <p class="footer-copyright">© 2026 by Yashav Bhatnagar :></p>
+            <div class="footer-links">
+                <div class="footer-group">
+                    <p class="footer-label">Call</p>
+                    <p class="footer-value">9755978269</p>
                 </div>
-            </div>
-            <!-- <div class="footer-nav">
-                <a href="#about">About</a>
-                <a href="#hometown">Hometown</a>
-                <a href="#education">Education</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#cv">CV</a>
-            </div> -->
-            <div class="copyright">
-                &copy; 2025 Yashav Bhatnagar. All rights reserved :>.
+                <div class="footer-group">
+                    <p class="footer-label">Write</p>
+                    <p class="footer-value">yashav.bhatnagar@students.iiit.ac.in</p>
+                </div>
+                <div class="footer-group">
+                    <div class="footer-social">
+                        <a href="https://github.com/AstroDuck17" target="_blank" title="GitHub"><img src="images/github-mark.svg" alt="GitHub" class="github-icon"></a>
+                        <a href="https://www.linkedin.com/in/yashav-bhatnagar-973853320/" target="_blank" title="LinkedIn">in</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
-    <script>
-        // Horizontal scroll functionality using arrow buttons.
-        const gallery = document.getElementById('gallery');
-        let scrollAmount;
-        if(window.innerWidth <= 480) {
-            // On phone, scroll by one image container's width plus the gap (15px)
-            scrollAmount = gallery.querySelector('div').offsetWidth + 15;
-        } else {
-            scrollAmount = 430; // default for larger screens
-        }
-        document.getElementById('leftArrow').addEventListener('click', () => {
-            gallery.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        });
-        document.getElementById('rightArrow').addEventListener('click', () => {
-            gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        });
-
-        // Dark Mode Toggle
-        const toggle = document.getElementById('dark-mode-toggle');
-        toggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            toggle.textContent = document.body.classList.contains('dark-mode') ? "Light Mode" : "Dark Mode";
-        });
-    </script>
-    <script src="tracking.js"></script>
 </body>
 </html>
