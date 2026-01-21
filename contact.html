@@ -29,7 +29,7 @@
         <div class="contact-container">
             <h1 class="page-title"><span class="blue-square">■</span>Let's talk</h1>
             
-            <form class="contact-form" action="mailto:yashav.bhatnagar@students.iiit.ac.in" method="post" enctype="text/plain">
+            <form class="contact-form" id="contactForm">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstName">First Name *</label>
@@ -60,6 +60,24 @@
             </form>
         </div>
     </main>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value || 'Contact Form Submission';
+            const message = document.getElementById('message').value;
+            
+            const mailtoLink = `mailto:yashav.bhatnagar@students.iiit.ac.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+                `Name: ${firstName} ${lastName}\nEmail: ${email}\n\nMessage:\n${message}`
+            )}`;
+            
+            window.location.href = mailtoLink;
+        });
+    </script>
 
     <!-- Footer -->
     <footer>
