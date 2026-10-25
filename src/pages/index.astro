@@ -23,11 +23,11 @@ const notes = (await writing()).filter(p=>p.data.featured);
   <section class="wrap section home-writing"><div class="section-heading"><h2>From my notebook</h2><a class="text-link" href={href('writing/')}>Articles & notes ↗</a></div><WritingList entries={notes} /></section>
   <section class="wrap personal-section" aria-label="Away from the keyboard">
     <details class="personal-details">
-      <summary><span class="personal-title">Away from the keyboard</span><span class="disclosure-icon" aria-hidden="true">+</span></summary>
+      <summary><h2 class="personal-title">Away from the keyboard</h2><span class="disclosure-icon" aria-hidden="true">+</span></summary>
       <div class="personal-interests">
-        <div><h2>Piano</h2><p>Some time at the piano makes a nice change from a screen.</p></div>
-        <div><h2>Drawing</h2><p>I like sketching and trying out different styles. There’s always more to practice.</p></div>
-        <div><h2>Travel</h2><p>I enjoy seeing new places and having a look around.</p></div>
+        <div><h3>Piano</h3><p>Some time at the piano makes a nice change from a screen.</p></div>
+        <div><h3>Drawing</h3><p>I like sketching and trying out different styles. There’s always more to practice.</p></div>
+        <div><h3>Travel</h3><p>I enjoy seeing new places and having a look around.</p></div>
       </div>
     </details>
   </section>

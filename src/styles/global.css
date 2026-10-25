@@ -54,7 +54,7 @@
   .hero-intro + .hero-intro { margin-top:14px; }
   .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:27px; margin-top:29px; }
   .hero-aside { padding-top:30px; }
-  .portrait-frame { position:relative; transform:rotate(3deg); padding:12px 12px 38px; background:var(--butter); border:1px solid var(--line); border-radius:120px 120px 12px 12px; }
+  .portrait-frame { position:relative; padding:12px 12px 38px; background:var(--butter); border:1px solid var(--line); border-radius:120px 120px 12px 12px; }
   .portrait-frame img { width:100%; height:286px; object-fit:cover; object-position:center 40%; border-radius:108px 108px 3px 3px; filter:saturate(.7); }
   .interest-band { border-block:1px solid var(--separator); background:var(--butter); }
   .interest-inner { display:flex; align-items:center; gap:23px; min-height:77px; justify-content:space-between; }
@@ -110,11 +110,11 @@
   .personal-details { border:0; }
   .personal-details summary { display:flex; align-items:center; justify-content:space-between; gap:24px; padding-block:22px; cursor:pointer; list-style:none; }
   .personal-details summary::-webkit-details-marker { display:none; }
-  .personal-title { display:block; color:var(--ink); font-family:var(--heading); font-size:1.65rem; line-height:1.2; letter-spacing:-.035em; }
+  .personal-title { min-width:0; }
   .disclosure-icon { width:38px; height:38px; flex-shrink:0; display:grid; place-items:center; border:1px solid var(--line); border-radius:50%; color:var(--olive); font-size:1.5rem; line-height:1; transition:transform .18s; }
   .personal-details[open] .disclosure-icon { transform:rotate(45deg); }
   .personal-interests { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:35px; padding-block:7px 32px; }
-  .personal-interests h2 { font-size:1.4rem; margin-bottom:10px; }
+  .personal-interests h3 { font-size:1.4rem; margin-bottom:10px; }
   .personal-interests p { font-size:.85rem; max-width:300px; }
   .site-footer { border-top:1px solid var(--separator); padding-block:35px 24px; display:grid; grid-template-columns:1fr auto; gap:30px; }
   .footer-name { color:var(--ink); font-family:var(--heading); font-size:1.25rem; text-decoration:none; }
@@ -281,6 +281,7 @@
     .section-heading { display:block; margin-bottom:26px; }
     .section-heading>.text-link { margin-top:20px; }
     .section-heading h2 { max-width:470px; font-size:2.15rem; }
+    .personal-title { font-size:2.15rem; }
     .project-grid { grid-template-columns:1fr; gap:37px; }
     .project-card h3 { font-size:1.6rem; }
     .curiosity-section { grid-template-columns:1fr; gap:23px; }
