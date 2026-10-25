@@ -20,7 +20,10 @@ All listed live layouts were inspected in the browser during this redesign. Thei
 
 ## Implementation decisions
 
-- Personal interests live inside a native, initially collapsed “Beyond the code” disclosure on Home. Opening it expands the page in place, with keyboard support and no navigation.
+- Copy follows the user-provided Humanizer skill at `../SKILL.md`: direct introductions and descriptive project titles, with no branding slogans or inflated claims. The homepage introduces Yashav and his current work; the footer states his degree affiliation.
+- Horizontal section separators use `--separator: #C4B997`; card outlines retain the original `--line: #E4DDBE`. Adjacent sections share a single boundary. The interests disclosure has no separate surrounding borders or spacer before the footer.
+- Hardware Test Jig emphasizes protocol implementation and configurable communication. The browser interface and live diagnostics are also Yashav's contribution; CLI/Tkinter access is secondary context. The cover diagram reflects the protocol settings and browser controls.
+- Personal interests live inside a native, initially collapsed “Outside computer science” disclosure on Home. Opening it expands the page in place, with keyboard support and no navigation.
 - Writing uses a 70/30 articles/notes grid on desktop and stacks on mobile. Each entry lives under its actual content type; draft is a status, not another category. Quantum computing appears alongside the other topic links, without a separate writing-page callout.
 - Astro produces static HTML, with Markdown content collections and typed résumé data. It adds Node/build dependencies but removes repeated HTML layouts and supports reliable publishing. MDX is available for future explanations where interactive components add value; no client framework is needed now.
 - Shared navigation, spacing, colors, typography and diagrams across routes. Grids/sidebar stack on small screens. Native links, selects, skip link and visible focus states; reduced-motion CSS.

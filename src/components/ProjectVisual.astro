@@ -7,11 +7,20 @@ const { kind, large = false } = Astro.props;
     <defs><pattern id={`grid-${kind}`} width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="currentColor" opacity=".18" /></pattern></defs>
     <rect width="600" height="330" fill={`url(#grid-${kind})`} />
     {kind === 'hardware' ? <>
-      <path d="M170 110H250M170 165H250M170 220H250M350 165H440" class="wire" />
-      {[['CLI',110],['DESKTOP',165],['BROWSER',220]].map(([s,y]) => <><rect x="62" y={Number(y)-20} width="108" height="40" rx="8" class="diagram-box" /><text x="116" y={Number(y)+5} class="diagram-text">{s}</text></>)}
-      <rect x="250" y="108" width="100" height="114" rx="12" class="diagram-solid" /><text x="300" y="152" class="diagram-text inverse">DEVICE</text><text x="300" y="175" class="diagram-text inverse">LAYER</text>
-      <rect x="440" y="130" width="105" height="70" rx="8" class="diagram-box" /><text x="492" y="159" class="diagram-text">RASPBERRY</text><text x="492" y="180" class="diagram-text">PI + SENSORS</text>
-      <text x="300" y="281" class="diagram-label">THREE INTERFACES. ONE HARDWARE LAYER.</text>
+      <rect x="38" y="75" width="160" height="180" rx="12" class="diagram-box" />
+      <text x="118" y="109" class="diagram-text">COMMUNICATION SETTINGS</text>
+      <text x="118" y="144" class="diagram-text">bus / device / address</text>
+      <text x="118" y="174" class="diagram-text">baud / data / stop bits</text>
+      <text x="118" y="204" class="diagram-text">SPI mode / clock speed</text>
+      <text x="118" y="234" class="diagram-text">PWM frequency / duty</text>
+      <path d="M198 165h38M370 165h28v-44h20M398 165v56h20" class="wire" />
+      <rect x="236" y="108" width="134" height="114" rx="12" class="diagram-solid" />
+      <text x="303" y="140" class="diagram-text inverse">RASPBERRY PI</text><text x="303" y="165" class="diagram-text inverse">TEST JIG</text><text x="303" y="193" class="diagram-text inverse">WEB CONTROLS</text>
+      <rect x="418" y="80" width="145" height="82" rx="8" class="diagram-box" />
+      <text x="490" y="107" class="diagram-text">I2C / SPI / UART</text><text x="490" y="136" class="diagram-text">RS485 / MODBUS RTU</text>
+      <rect x="418" y="180" width="145" height="82" rx="8" class="diagram-box" />
+      <text x="490" y="211" class="diagram-text">PWM / GPIO</text><text x="490" y="240" class="diagram-text">ADC VIA ADS1115</text>
+      <text x="300" y="285" class="diagram-label">MULTIPLE PROTOCOLS · CONFIGURABLE COMMUNICATION</text>
     </> : kind === 'physics' ? <>
       {[0,1,2,3].map((i) => <><rect x={64+i*124} y="80" width="100" height="122" rx="8" class="diagram-box" /><path d={`M${74+i*124} 178h80`} class="wire" /><circle cx={90+i*135} cy={150-i*13} r="14" class="diagram-solid" /><text x={114+i*124} y="226" class="diagram-text">t{i ? ` + ${i}` : ''}</text></>)}
       <path d="M104 255H500m-12-8 12 8-12 8" class="wire" /><text x="300" y="294" class="diagram-label">WHAT DOES A VIDEO REPRESENTATION REMEMBER?</text>

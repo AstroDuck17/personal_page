@@ -1,6 +1,6 @@
 ---
-title: "Inside a teaching kernel"
-description: "Extending xv6-riscv with scheduler choices, demand paging, disk swap, and small observability tools."
+title: "xv6 kernel extensions"
+description: "CPU scheduling, demand paging, disk swap and system calls in MIT's xv6-riscv teaching kernel."
 type: project
 topics: [systems]
 status: completed
@@ -34,8 +34,8 @@ The additional system calls expose information useful for observing memory behav
 
 ## Evidence
 
-The linked repository contains the kernel and documents its build requirements, scheduling choices, virtual-memory changes, and system calls. These are concrete teaching-kernel extensions rather than a new operating system built from scratch.
+The repository contains the modified teaching kernel, build instructions and documentation for the schedulers, memory changes and system calls.
 
 ## Limitations
 
-The CFS policy is Linux-inspired, not a reproduction of Linux's scheduler. xv6 is a deliberately small teaching system, and these implementations should not be assumed to have production-kernel performance or robustness. No comparative benchmark is claimed here.
+The CFS policy takes ideas from Linux's scheduler but implements them within xv6's smaller teaching system. Its performance and reliability have not been evaluated against production kernels.

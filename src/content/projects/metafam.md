@@ -1,5 +1,5 @@
 ---
-title: "Predicting missing family ties"
+title: "MetaFam: family relationship prediction"
 description: "Comparing knowledge graph embeddings and graph neural networks on a family relationship graph, with attention to evaluation leakage."
 type: project
 topics: [machine-learning]
@@ -30,7 +30,7 @@ I implemented the knowledge graph embedding models TransE, DistMult, ComplEx, an
 
 Embedding models and graph neural networks offer different ways to represent entities and relationships. I compared their link-prediction behavior and also examined the graph's community structure using Louvain and Leiden community detection.
 
-The split design is an important part of this project. Related edges can expose information about a held-out relationship, so interpreting a link-prediction result requires knowing how the graph was divided.
+Related edges can expose information about a held-out relationship. Evaluating the predictions requires checking which edges are available to the model in each split.
 
 ## Evidence
 
@@ -38,4 +38,4 @@ My CV reports a ComplEx mean reciprocal rank above 0.87 and near-perfect Hits@10
 
 ## Limitations
 
-These are results for this dataset and evaluation setup. They should not be read as a general claim about predicting real family relationships or as a comparison against every alternative model. Dataset construction, candidate ranking, and split details are necessary context for any reproduction or further comparison.
+The reported results apply to this dataset and evaluation setup. Reproduction and comparisons require the dataset construction, candidate ranking and split details; performance on other family graphs has not been established.

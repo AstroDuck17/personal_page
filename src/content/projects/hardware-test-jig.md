@@ -1,11 +1,11 @@
 ---
-title: "One workbench, seven hardware interfaces"
-description: "A Raspberry Pi test jig that brings sensor checks, low-level protocol controls, and live diagnostics into one workbench."
+title: "Raspberry Pi hardware test jig"
+description: "A test jig for multiple hardware protocols, with configurable communication and a browser interface for running tests and viewing live results."
 type: project
 topics: [embedded, systems]
 status: completed
 featured: true
-role: "Hardware validation platform development"
+role: "Protocol implementation, custom communication controls and browser interface"
 context: "Smart City Living Lab · IIIT Hyderabad"
 dateLabel: "2025–2026"
 stack: [Python, Raspberry Pi 3, FastAPI, Tkinter, SSE, Modbus RTU]
@@ -19,46 +19,58 @@ sources:
   - 'D:\college\Resume\personal_web\Yashav_Bhatnagar_CV.pdf'
   - 'D:\college\SCRC\Hardware_Test_Jig\README.md'
   - 'D:\college\SCRC\project_details.md'
+  - 'D:\college\SCRC\Hardware_Test_Jig\web_test_jig\lib\CUSTOM\custom_i2c.py'
+  - 'D:\college\SCRC\Hardware_Test_Jig\web_test_jig\lib\CUSTOM\custom_spi.py'
+  - 'D:\college\SCRC\Hardware_Test_Jig\web_test_jig\lib\CUSTOM\custom_uart.py'
+  - 'D:\college\SCRC\Hardware_Test_Jig\web_test_jig\lib\CUSTOM\custom_pwm.py'
 ---
 
 ## Problem
 
-A sensor that does not respond can leave a lot of suspects: the wiring, the bus configuration, a device address, the protocol, or the application reading it. Testing a collection of different devices adds another complication: each often comes with its own script and setup instructions.
+A sensor test often needs its own wiring, communication settings and device-specific commands. Testing several kinds of hardware means working with different buses and checking that each device can send or receive data correctly.
 
-The Hardware Test Jig brings these checks together on a Raspberry Pi 3. The aim is to make protocol-level debugging accessible from a terminal, a desktop interface, or another device on the same network.
+I built a Raspberry Pi 3 test jig to run these checks across multiple protocols. It supports preset sensor tests and custom communication for devices that need different settings or commands.
 
 ## My contribution
 
-At the Smart City Living Lab, I developed the Python-based validation platform and its CLI, Tkinter GUI, and FastAPI web interfaces. My work included live diagnostic output through Server-Sent Events, non-blocking hardware checks, and RS485 Modbus RTU communication for sensor integration.
+At the Smart City Living Lab, my main work was implementing the protocol support and configurable communication controls. I worked on I2C and SPI operations, serial communication, PWM control and RS485 Modbus RTU testing.
 
-The platform covers seven interface categories: I2C, SPI, UART, PWM, GPIO, ADC, and RS485. These are practical testing categories rather than seven equivalent wire protocols; for example, analog readings use an external ADS1115 ADC connected over I2C.
+I also built the FastAPI browser interface, including protocol selection, custom settings and live diagnostic output through Server-Sent Events. The jig can also be accessed through a CLI and a Tkinter GUI.
+
+The supported testing categories are I2C, SPI, UART, PWM, GPIO, ADC and RS485. Analog readings use an external ADS1115 ADC connected over I2C.
 
 ## Approach
 
-### Keep device operations reusable
+### Configurable protocol communication
 
-Device modules hold the hardware-specific work. The interface layer selects a device and presents its results. This lets the same sensor support a terminal workflow, a local desktop session, and a browser without maintaining three separate hardware implementations.
+The custom controls expose settings and operations appropriate to each protocol:
 
-The documented device pattern separates a continuous CLI activation loop from a single-reading method used by the GUI and web interface. That distinction matters: an operation that is convenient in a terminal should not block an interface that needs to remain responsive.
+- I2C: select the bus and device address, scan for devices, and read or write bytes, registers and blocks.
+- SPI: select the bus, chip-select device, mode and clock speed, then run transfers or separate read/write operations.
+- UART: select the serial port, baud rate, data bits, parity, stop bits and timeout. Send strings or bytes, read responses and inspect or clear buffers.
+- PWM: select a supported pin and adjust frequency, duty cycle or pulse width.
+- RS485: configure Modbus RTU communication, including serial settings, slave IDs and register addresses, with transmit and receive modes.
 
-### Offer a quick check and a lower-level escape hatch
+### Preset device tests
 
-Preconfigured tests cover devices such as a BH1750 light sensor, an OLED display, an SDS011 particulate sensor, servos, and an ultrasonic distance sensor. When a preset is not enough, custom controls expose I2C scans and register operations, SPI transfers, configurable UART communication, and PWM frequency and duty cycle.
+Preset tests cover devices such as a BH1750 light sensor, an OLED display, an SDS011 particulate sensor, servos and an ultrasonic distance sensor. These provide a starting point for checking known hardware. The custom controls allow communication with devices outside those presets.
 
-RS485 testing provides configurable Modbus RTU transmit and receive modes. Keeping these controls in the same workbench helps move from “the sensor is silent” to a more specific question about configuration or communication.
+Device modules contain the hardware operations and are reused by the browser, CLI and GUI. They support continuous terminal tests and single-reading calls for the graphical interfaces.
 
-### Make long-running checks visible
+### Browser interface and live diagnostics
 
-The web interface streams diagnostic output through Server-Sent Events. Threading and asynchronous execution keep hardware interaction from tying up the interface, while logs provide a record to inspect when a check fails.
+The browser interface lets a user select a protocol, choose a preset test or configure custom communication, and inspect results from another device on the same network. I implemented the FastAPI routes and Server-Sent Events output for these tests.
+
+Threading and asynchronous execution keep hardware checks from blocking the interface. Diagnostic logs help trace failed operations and inspect responses.
 
 ## Evidence
 
-The repository documents the device modules, protocol controls, interface entry points, and wiring references. The platform was showcased at Research Fest @IIITH in Spring 2026, as recorded in my current CV.
+The source repository contains the protocol implementations, custom communication modules and browser routes, with device and wiring documentation. The test jig was shown at Research Fest @IIITH in Spring 2026.
 
-This is an implemented validation tool. I do not have a published benchmark for its throughput, time saved, or reliability across every supported sensor configuration.
+Throughput, time saved and reliability across all supported sensor configurations have not been benchmarked.
 
 ## Limitations
 
-The tool still depends on correct wiring, enabled Raspberry Pi interfaces, suitable permissions, and compatible devices. Some functions share GPIO pins, so a wiring plan matters before running checks together.
+Tests require correct wiring, enabled Raspberry Pi interfaces, suitable permissions and compatible devices. Some functions share GPIO pins and need an appropriate wiring configuration.
 
-The documented web application has no authentication and is intended for a trusted network. It is a local hardware workbench; deploying it as a public service would require additional access controls and operational work.
+The browser application has no authentication and is intended for a trusted network. Public deployment would require access controls.

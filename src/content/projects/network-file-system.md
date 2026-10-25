@@ -1,6 +1,6 @@
 ---
-title: "Files, locks, and checkpoints"
-description: "A distributed document system exploring concurrent edits, recovery, and storage replication."
+title: "Network file system"
+description: "A distributed document system with sentence-level locking, checkpoints and storage replication."
 type: project
 topics: [systems]
 status: completed
@@ -20,7 +20,7 @@ sources:
 
 ## Problem
 
-Concurrent document access becomes a coordination problem when files live across multiple servers. An editor needs a useful locking boundary, while the system needs a way to preserve earlier states and recover when work goes wrong.
+Concurrent edits need coordination when documents are stored across multiple servers. The system also needs to retain earlier document states and recover from failed operations.
 
 ## My contribution
 
@@ -32,8 +32,8 @@ Sentence-level locking makes the unit of coordination smaller than an entire doc
 
 ## Evidence
 
-The source repository is available above, and the features are recorded in my CV. The project provided a practical setting for socket programming, POSIX threads, and coordinating shared state across server boundaries.
+The repository contains the implementation. The work involved socket programming, POSIX threads and shared state across naming and storage servers.
 
 ## Limitations
 
-Horizontal expansion is a design goal, not a benchmarked claim of uninterrupted scaling. Asynchronous replication also leaves questions about the timing and consistency of copies; no formal consistency guarantee or quantified failure-recovery result is claimed on this page.
+Adding servers is part of the design; scaling without downtime has not been benchmarked. Replication is asynchronous, so copies may lag. Formal consistency guarantees and recovery timings have not been measured.

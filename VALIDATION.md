@@ -38,6 +38,14 @@ Chromium-based in-app browser; desktop 1280px and mobile 390px viewport. Inspect
 - Mobile columns stack with no horizontal page overflow in the inspected narrow viewport. Screenshots: `.qa/writing-columns-desktop.jpg` and `.qa/writing-columns-mobile.jpg`.
 - Astro check remained clean; release build and generated-link/draft-exclusion verification passed after the layout revision. Live hosting remains unchanged.
 
+## Follow-up copy and separator revision · 26 October 2026
+
+- Applied the user-supplied Humanizer skill (`../SKILL.md`) to the visible site copy. Replaced the landing slogan, header/footer taglines, page introductions and decorative project titles with direct wording. Preserved dates, links, reported metrics and the draft note's code/equation.
+- Clarified the Hardware Test Jig contribution using the user's correction and local protocol modules. Protocol implementation and configurable settings lead the case; the browser interface and live diagnostics are also personal contributions. CLI/GUI access is secondary. The diagram and résumé use the same emphasis.
+- Added a darker horizontal separator token (`#C4B997`). Removed the last writing-row border before the interests disclosure, its surrounding borders, and the spacer before the footer. Browser measurements confirmed no border on the disclosure itself, no final row border and a zero gap to the footer.
+- Inspected the revised homepage and test-jig case in the browser. Narrow-layout checks found no horizontal overflow; the native disclosure still toggles with Enter. Moved the diagram's bottom label up after spotting an overlap with its caption on mobile.
+- Astro check, production build and generated link/asset/CV/draft-exclusion checks pass. No dependency or deployment changes; the live site remains untouched.
+
 ## Limits and intentional omissions
 
 - Authenticated GitHub Pages settings, branch protection and actual Actions deployment have not been exercised. Workflow is prepared for the existing repository base path; deployment follows review.

@@ -1,5 +1,5 @@
 ---
-title: "What does a video model know about time?"
+title: "Probing time in V-JEPA2 video representations"
 description: "An ongoing investigation of temporal and physical information in frozen V-JEPA2 representations."
 type: research
 topics: [machine-learning]
@@ -25,7 +25,7 @@ Video models encounter motion, repeated actions, and physical events during trai
 
 ## My contribution
 
-I am working on layer-wise probing of frozen V-JEPA2 representations at Precog, advised by Prof. Ponnurangam Kumaraguru. The work examines intermediate representations rather than fine-tuning the video model to solve each target task.
+I am working on layer-wise probing of frozen V-JEPA2 representations at Precog, advised by Prof. Ponnurangam Kumaraguru. The probes use features from the model's intermediate layers while its parameters stay fixed.
 
 ## Approach
 
@@ -33,12 +33,12 @@ A frozen model extracts features from video clips. Smaller probes learn to predi
 
 Temporal-shuffling controls ask whether changing the order of frames changes the information a probe can recover. Cross-context controls ask whether a result carries beyond the particular appearance or setting seen during probe training.
 
-These controls matter because success on one dataset can have several explanations. A probe may exploit appearance cues or other shortcuts instead of information about the temporal property of interest.
+A probe may use appearance cues or other dataset shortcuts to predict a label. The controls help check whether its predictions depend on the temporal property being studied.
 
 ## Evidence and current status
 
-This is ongoing research. The current public description covers the questions and methodology recorded in my CV. I am not presenting a completed benchmark, a finding that the model understands physical rules, or a publication here.
+The work is ongoing. Results and evaluation details will be added when they are ready to share.
 
 ## Limitations
 
-Recovering a label from a representation is evidence about accessibility under a particular probe and evaluation setup. It does not, on its own, establish human-like understanding or prove that the original model uses that information when making predictions. Further results and supporting material will be added when they are ready to share.
+Recovering a label shows that information is accessible to a particular probe under its evaluation setup. Establishing physical understanding, or whether the original model uses that information in its own predictions, requires further evidence.

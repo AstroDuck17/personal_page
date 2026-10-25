@@ -6,7 +6,7 @@ import '../styles/global.css';
 import { href, reviewMode } from '../lib/content';
 import { resume } from '../data/resume';
 interface Props { title?: string; description?: string; active?: string; noindex?: boolean; }
-const { title, description = 'Yashav Bhatnagar — computer science student at IIIT Hyderabad, exploring machine learning, systems, and quantum computing.', active = '', noindex = false } = Astro.props;
+const { title, description = 'Yashav Bhatnagar, a computer science student at IIIT Hyderabad. Projects and research in machine learning, systems and embedded hardware.', active = '', noindex = false } = Astro.props;
 const nav = [['Home', ''], ['Projects & Research', 'projects/'], ['Articles & Notes', 'writing/'], ['Résumé', 'resume/']];
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -16,7 +16,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#FFFBEF" />
-    <title>{title ? `${title} · Yashav Bhatnagar` : 'Yashav Bhatnagar · Curiosity, code & a few questions'}</title>
+    <title>{title ? `${title} · Yashav Bhatnagar` : 'Yashav Bhatnagar · Computer science student'}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href={href('favicon.svg')} />
@@ -30,14 +30,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <a href="#main" class="skip-link">Skip to content</a>
     {reviewMode && <aside class="review-banner">Local review · includes unpublished drafts. Release builds exclude them.</aside>}
     <header class="site-header wrap">
-      <a class="brand" href={href()} aria-label="Yashav Bhatnagar, home"><span class="brand-flower" aria-hidden="true">✳</span><span>Yashav Bhatnagar<span class="brand-sub">a work in progress, in the best way.</span></span></a>
+      <a class="brand" href={href()} aria-label="Yashav Bhatnagar, home"><span class="brand-flower" aria-hidden="true">✳</span><span>Yashav Bhatnagar<span class="brand-sub">CSE student · IIIT Hyderabad</span></span></a>
       <nav aria-label="Main navigation">{nav.map(([label, path]) => <a href={href(path)} aria-current={active === label ? 'page' : undefined}>{label}</a>)}</nav>
     </header>
     <main id="main" tabindex="-1"><slot /></main>
     <footer class="site-footer wrap">
-      <div><a class="footer-name" href={href()}>Yashav Bhatnagar <span aria-hidden="true">↗</span></a><p>Learning, building, leaving a trail of notes.</p></div>
+      <div><a class="footer-name" href={href()}>Yashav Bhatnagar</a><p>B.Tech student, IIIT Hyderabad.</p></div>
       <div class="footer-links"><a href={`mailto:${resume.email}`}>Email ↗</a><a href={resume.github}>GitHub ↗</a><a href={resume.linkedin}>LinkedIn ↗</a></div>
-      <p class="copyright">© {new Date().getUTCFullYear()} Yashav Bhatnagar · Made with curiosity.</p>
+      <p class="copyright">© {new Date().getUTCFullYear()} Yashav Bhatnagar</p>
     </footer>
   </body>
 </html>

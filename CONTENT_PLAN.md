@@ -39,6 +39,8 @@ Project frontmatter records source locations for maintenance. Those paths are pr
 
 ## Editorial boundary and remaining facts
 
+The user clarified the Hardware Test Jig contribution: implementing multiple protocols and custom communication settings was the main work, alongside the browser interface. CLI and GUI are additional access modes. The project case, card, diagram and web résumé now reflect that priority. Configurable bus/device selection, UART framing, SPI mode/speed and PWM settings were checked against the local `lib/CUSTOM/` implementations. The original source PDF is unchanged.
+
 The user has confirmed current CV details and dates; these are resolved. No invented project start/end dates are supplied. General context dates are used only when supported.
 
 Further detail would improve later updates: Microbot's exact team responsibility split and reproducible evaluation conditions; MetaFam's complete benchmark/split protocol; and which research results or client artifacts are approved for public release. Current copy avoids claims dependent on those answers.

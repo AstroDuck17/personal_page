@@ -20,7 +20,7 @@ const relatedProjects = (await projects()).filter(item=>d.related.includes(item.
     <dl class="case-facts"><div><dt>My role</dt><dd>{d.role}</dd></div><div><dt>Context</dt><dd>{d.context}</dd></div><div><dt>Built with</dt><dd>{d.stack.join(' · ')}</dd></div></dl>
     {d.links.length > 0 && <div class="case-links">{d.links.map(link=><a class="button button-outline" href={link.url}>{link.label} ↗</a>)}</div>}
     <div class="prose"><Content /></div>
-    {(relatedWriting.length > 0 || relatedProjects.length > 0) && <aside class="related-section"><p class="eyebrow">FOLLOW THE THREAD</p>{relatedWriting.map(item=><a class="related-link" href={writingUrl(item.id)}>{item.data.title} {item.data.draft && '(review draft)'} ↗</a>)}{relatedProjects.map(item=><a class="related-link" href={projectUrl(item.id)}>{item.data.title} ↗</a>)}</aside>}
+    {(relatedWriting.length > 0 || relatedProjects.length > 0) && <aside class="related-section"><p class="eyebrow">RELATED WORK</p>{relatedWriting.map(item=><a class="related-link" href={writingUrl(item.id)}>{item.data.title} {item.data.draft && '(review draft)'} ↗</a>)}{relatedProjects.map(item=><a class="related-link" href={projectUrl(item.id)}>{item.data.title} ↗</a>)}</aside>}
     <a class="text-link back-bottom" href={href('projects/')}>← Back to projects & research</a>
   </article>
 </Base>

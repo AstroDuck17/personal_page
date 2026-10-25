@@ -10,9 +10,8 @@ const notes = entries.filter(entry => entry.data.type === 'note');
 <Base title="Articles & Notes" active="Articles & Notes">
   <div class="wrap">
     <header class="page-intro">
-      <p class="eyebrow">A NOTEBOOK, LEFT OPEN</p>
-      <h1>Things I’m learning.<br /><em>Ideas I’m turning over.</em></h1>
-      <p>Longer explanations, small discoveries, and notes from the space between understanding something and being able to explain it.</p>
+      <h1>Articles & notes</h1>
+      <p>Explanations and study notes on the topics I’m working through.</p>
     </header>
     <nav class="writing-topics" aria-label="Browse writing by topic">
       <span class="eyebrow">BROWSE BY TOPIC</span>
@@ -20,12 +19,12 @@ const notes = entries.filter(entry => entry.data.type === 'note');
     </nav>
     <div class="writing-columns">
       <section class="writing-column articles-column" aria-labelledby="articles-heading">
-        <header class="writing-column-heading"><h2 id="articles-heading">Articles & explanations</h2><p>A question, followed a little further.</p></header>
-        {articles.length ? <WritingList entries={articles} /> : <p class="writing-column-empty">Longer pieces will appear here when they’re ready.</p>}
+        <header class="writing-column-heading"><h2 id="articles-heading">Articles & explanations</h2><p>Longer explanations of research and technical topics.</p></header>
+        {articles.length ? <WritingList entries={articles} /> : <p class="writing-column-empty">No articles published yet.</p>}
       </section>
       <section class="writing-column notes-column" aria-labelledby="notes-heading">
-        <header class="writing-column-heading"><h2 id="notes-heading">Notes</h2><p>Smaller observations, with room to grow.</p></header>
-        {notes.length ? <WritingList entries={notes} /> : <p class="writing-column-empty">Short notes will appear here as I explore.</p>}
+        <header class="writing-column-heading"><h2 id="notes-heading">Notes</h2><p>Shorter observations and study notes.</p></header>
+        {notes.length ? <WritingList entries={notes} /> : <p class="writing-column-empty">No notes published yet.</p>}
       </section>
     </div>
   </div>

@@ -16,9 +16,9 @@ sources:
   - 'https://ogb.stanford.edu/docs/linkprop/'
 ---
 
-A graph-learning result starts with a deceptively small question: which connections should the model predict? A second question deserves equal attention: which connections is it allowed to see while making that prediction?
+Evaluating a graph model requires specifying which connections it should predict and which connections it can see while making those predictions.
 
-Those questions define the experiment. This note uses a hypothetical family graph to make them concrete. It does not reconstruct MetaFam’s implementation, splits, or reported results; those details need to be checked against the project’s code and experiment records before publication.
+The examples here use a hypothetical family graph. MetaFam's implementation, splits and reported results still need to be checked against its code and experiment records before this draft is published.
 
 ## The graph used for learning is part of the model
 
@@ -26,15 +26,15 @@ A knowledge-graph fact can be written as a triple: a source entity, a relation, 
 
 Relational graph convolutional networks extend graph convolution to multiple relation types. They can collect evidence through a graph before scoring a possible missing fact. The [original R-GCN paper](https://arxiv.org/abs/1703.06103) studies this approach for entity classification and link prediction.
 
-That makes the encoder’s input graph an important part of evaluation. Hiding a triple from the loss function does not establish that its answer is absent from the information supplied to the model. It is useful to distinguish the **message-passing graph**, which supplies context, from the **supervision edges**, which supply targets.
+The encoder's input graph affects the evaluation. A triple hidden from the loss function may still be visible elsewhere in the model's inputs. The message-passing graph supplies context; supervision edges supply targets.
 
 ## A missing edge can leave its answer behind
 
 Suppose `(Ada, parent_of, Bea)` is a test target. Three situations deserve different interpretations:
 
-1. **The target remains in the message-passing graph.** The model receives the exact connection it is being asked to recover.
-2. **Its explicit inverse remains:** `(Bea, child_of, Ada)`. If the dataset defines these relations as inverses, the answer survives in another representation.
-3. **Other family context remains:** perhaps Bea and Cal share a parent. This may provide useful evidence without directly restating the target.
+1. The target remains in the message-passing graph. The model receives the exact connection it is being asked to recover.
+2. Its explicit inverse remains: `(Bea, child_of, Ada)`. If the dataset defines these relations as inverses, the answer survives in another representation.
+3. Other family context remains: perhaps Bea and Cal share a parent. This may provide useful evidence without directly restating the target.
 
 The third case is not automatically leakage. Inferring missing facts from permitted context is often the intended task. Removing every informative path would change that task. The distinction is between information available under the intended evaluation setting and information that reveals a held-out answer through an unintended shortcut.
 
@@ -44,7 +44,7 @@ An edge split and a family-level split therefore ask different questions. Holdin
 
 One useful implementation rule is to keep an original fact and its inverse together when assigning splits. Then construct the permitted graph for each evaluation stage. PyTorch Geometric’s [RandomLinkSplit documentation](https://pytorch-geometric.readthedocs.io/en/latest/generated/torch_geometric.transforms.RandomLinkSplit.html) describes controls for paired reverse edge types and for separating message-passing edges from training supervision. These controls address specific representations; they do not replace an audit of dataset semantics.
 
-The following is **illustrative Python-style pseudocode**, not code from MetaFam. It assumes each triple represents one independently assigned fact, and that the inverse relation mapping is correct:
+This illustrative Python-style pseudocode assumes each triple represents one independently assigned fact and that the inverse relation mapping is correct. It is not MetaFam code.
 
 ```python
 # Illustrative split audit; not a complete training pipeline.
@@ -82,4 +82,4 @@ A single average can hide uneven performance. In a family graph, direct parent r
 
 A useful next analysis would compare a simple baseline and the graph model under the same information budget, then inspect representative mistakes. Does performance change when direct inverse shortcuts are removed? Does it persist on separate family groups? These are proposed diagnostic questions, not claims about completed experiments.
 
-Leakage checks cannot prove that a benchmark captures real-world reasoning. They can make a narrower claim credible: this score was obtained with these targets, this context, and these candidate answers. That is a much stronger foundation for deciding what to investigate next.
+A leakage audit records the targets, context and candidate answers used to obtain a score. Whether the benchmark captures reasoning that transfers beyond its dataset remains a separate question.

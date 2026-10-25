@@ -43,9 +43,9 @@ export const resume = {
       role: 'Undergraduate Researcher',
       period: 'April 2025–January 2026',
       bullets: [
-        'Developed a Raspberry Pi hardware validation platform covering seven interface categories, with CLI, Tkinter GUI, and FastAPI web access.',
-        'Implemented real-time SSE diagnostics, non-blocking hardware checks, and RS485 Modbus RTU communication for sensor integration.',
-        'Hardware Test Jig work showcased at Research Fest @IIITH, Spring 2026.',
+        'Implemented multiple hardware protocols and custom communication controls for a Raspberry Pi test jig, including bus and device selection, serial frame settings, PWM and Modbus RTU operations.',
+        'Built the FastAPI browser interface for protocol tests and configurable communication, with live SSE diagnostics and non-blocking hardware checks. The jig also supports CLI and Tkinter GUI access.',
+        'Hardware Test Jig shown at Research Fest @IIITH, Spring 2026.',
       ],
     },
   ],

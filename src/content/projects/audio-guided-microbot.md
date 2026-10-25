@@ -1,5 +1,5 @@
 ---
-title: "A small robot that listens locally"
+title: "Audio-guided microbot"
 description: "Offline voice control on an ESP32-S3, combining a compact keyword-spotting model with practical signal checks."
 type: project
 topics: [embedded, machine-learning]
@@ -26,7 +26,7 @@ We wanted a small robot to respond to directional voice commands without sending
 
 ## My contribution
 
-This was a four-person Team Sensodyne project. My work, described in my CV, centered on deploying the on-device CNN keyword-spotting pipeline and implementing a multi-metric speech gate. The robot, communication, and supervision features were team outcomes.
+This was a four-person Team Sensodyne project. I worked on deploying the on-device CNN keyword-spotting pipeline and implementing a multi-metric speech gate. The robot, communication and supervision features were team outcomes.
 
 ## Approach
 

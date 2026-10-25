@@ -1,5 +1,5 @@
 ---
-title: "ORBIT Node: context for security decisions"
+title: "ORBIT Node security orchestration"
 description: "A cybersecurity orchestration project connecting threat context, an asset graph, and AI-assisted assessments with analyst approval."
 type: project
 topics: [security, systems]
@@ -29,12 +29,11 @@ I led a five-person team and developed the Gemini MCP orchestrator and AI reason
 
 The system connects incoming threat information with local asset relationships and telemetry. That graph context feeds an AI-assisted assessment, which an analyst reviews before Wazuh is signaled to perform a mitigation.
 
-The graph and telemetry integrations make the assessment specific to the modeled environment. Analyst approval remains part of the decision flow.
 
 ## Evidence
 
-The project and my responsibilities are recorded in my current CV. The longer CV describes the integration in a simulated environment. This page summarizes the completed engineering work from January to May 2026; no public code or client demonstration is linked.
+The integration work took place in a simulated environment from January to May 2026. My CV records the project and my responsibilities. There is no public code or client demonstration linked here.
 
 ## Limitations
 
-This description does not establish production deployment, bank adoption, or independently measured threat-detection performance. AI reasoning and graph context still depend on the quality and freshness of the supplied information, and the workflow includes human review.
+Production deployment, bank adoption and threat-detection performance have not been independently verified. The assessments depend on the quality and freshness of the supplied information and require analyst review.

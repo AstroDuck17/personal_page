@@ -1,6 +1,6 @@
 ---
-title: "Building a Unix shell in C"
-description: "Following a command from parsing to processes, pipes, signals, and job control."
+title: "Unix shell in C"
+description: "A shell with pipelines, I/O redirection, signal handling and foreground/background job control."
 type: project
 topics: [systems]
 status: completed
@@ -20,7 +20,7 @@ sources:
 
 ## Problem
 
-A shell makes launching a program look simple. Building one reveals the work behind that interaction: interpreting commands, connecting file descriptors, tracking children, and deciding how terminal signals reach a job.
+This project implements the steps a Unix shell takes to run commands, connect file descriptors and manage child processes, including how terminal signals reach a job.
 
 ## My contribution
 
@@ -34,8 +34,8 @@ Redirection and pipes connect program inputs and outputs; foreground/background 
 
 ## Evidence
 
-The repository documents the modular source structure, build instructions, supported commands, and process-management features. This project made the relationship between shell syntax and operating-system calls concrete.
+The repository documents the source structure, build instructions, supported commands and process-management features.
 
 ## Limitations
 
-This is an educational shell with a defined feature set. It should not be assumed to implement every shell expansion, scripting construct, or compatibility guarantee of a full POSIX shell or Bash.
+This educational shell supports the documented commands and process controls. Shell expansions, scripting features and full POSIX or Bash compatibility are outside its scope.
