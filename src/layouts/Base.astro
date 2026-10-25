@@ -1,0 +1,43 @@
+---
+import '@fontsource-variable/fraunces';
+import '@fontsource-variable/dm-sans';
+import 'katex/dist/katex.min.css';
+import '../styles/global.css';
+import { href, reviewMode } from '../lib/content';
+import { resume } from '../data/resume';
+interface Props { title?: string; description?: string; active?: string; noindex?: boolean; }
+const { title, description = 'Yashav Bhatnagar — computer science student at IIIT Hyderabad, exploring machine learning, systems, and quantum computing.', active = '', noindex = false } = Astro.props;
+const nav = [['Home', ''], ['Projects & Research', 'projects/'], ['Articles & Notes', 'writing/'], ['Résumé', 'resume/']];
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#FFFBEF" />
+    <title>{title ? `${title} · Yashav Bhatnagar` : 'Yashav Bhatnagar · Curiosity, code & a few questions'}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href={href('favicon.svg')} />
+    <meta property="og:title" content={title ?? 'Yashav Bhatnagar'} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    {(reviewMode || noindex) && <meta name="robots" content="noindex, nofollow" />}
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    {reviewMode && <aside class="review-banner">Local review · includes unpublished drafts. Release builds exclude them.</aside>}
+    <header class="site-header wrap">
+      <a class="brand" href={href()} aria-label="Yashav Bhatnagar, home"><span class="brand-flower" aria-hidden="true">✳</span><span>Yashav Bhatnagar<span class="brand-sub">a work in progress, in the best way.</span></span></a>
+      <nav aria-label="Main navigation">{nav.map(([label, path]) => <a href={href(path)} aria-current={active === label ? 'page' : undefined}>{label}</a>)}</nav>
+    </header>
+    <main id="main" tabindex="-1"><slot /></main>
+    <footer class="site-footer wrap">
+      <div><a class="footer-name" href={href()}>Yashav Bhatnagar <span aria-hidden="true">↗</span></a><p>Learning, building, leaving a trail of notes.</p></div>
+      <div class="footer-links"><a href={`mailto:${resume.email}`}>Email ↗</a><a href={resume.github}>GitHub ↗</a><a href={resume.linkedin}>LinkedIn ↗</a></div>
+      <p class="copyright">© {new Date().getUTCFullYear()} Yashav Bhatnagar · Made with curiosity.</p>
+    </footer>
+  </body>
+</html>

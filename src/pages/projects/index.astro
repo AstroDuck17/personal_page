@@ -1,0 +1,27 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../lib/content';
+import { topics } from '../../data/topics';
+const entries = await projects();
+const availableTopics = Object.entries(topics).filter(([id])=>entries.some(e=>e.data.topics.some(topic=>topic === id)));
+---
+<Base title="Projects & Research" active="Projects & Research">
+  <div class="wrap"><header class="page-intro"><p class="eyebrow">EXPERIMENTS, SYSTEMS & QUESTIONS</p><h1>Work, with a little<br /><em>curiosity built in.</em></h1><p>From debugging sensor interfaces to studying video representations: a closer look at what I’ve built, what I contributed, and what I’m still figuring out.</p></header>
+    <form class="filter-bar" id="project-filters" aria-label="Filter projects"><label for="topic-filter">Explore by topic</label><select id="topic-filter" name="topic"><option value="all">All topics</option>{availableTopics.map(([id,topic])=><option value={id}>{topic.name}</option>)}</select><label for="type-filter" class="sr-only">Content type</label><select id="type-filter" name="type"><option value="all">Projects & research</option><option value="project">Projects</option><option value="research">Research</option></select><span id="project-count" role="status" aria-live="polite">{entries.length} entries</span></form>
+    <h2 class="sr-only">Projects and research</h2><section aria-label="Projects and research" class="project-grid project-index">{entries.map((entry,index)=><ProjectCard entry={entry} index={index+1} />)}</section><p id="no-projects" class="empty-message" hidden>No entries match these filters. Try another topic or content type.</p>
+  </div>
+</Base>
+<script>
+  const topic = document.querySelector<HTMLSelectElement>('#topic-filter');
+  const type = document.querySelector<HTMLSelectElement>('#type-filter');
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.project-card'));
+  const filter = () => {
+    let count = 0;
+    cards.forEach(card => { const visible = (topic?.value === 'all' || card.dataset.topics?.split(' ').includes(topic?.value ?? '')) && (type?.value === 'all' || card.dataset.type === type?.value); card.hidden = !visible; if(visible) count++; });
+    const label = document.querySelector('#project-count'); if(label) label.textContent = `${count} ${count === 1 ? 'entry' : 'entries'}`;
+    const empty = document.querySelector<HTMLElement>('#no-projects'); if(empty) empty.hidden = count > 0;
+  };
+  topic?.addEventListener('change',filter); type?.addEventListener('change',filter);
+  document.querySelector('#project-filters')?.addEventListener('submit',event => event.preventDefault());
+</script>

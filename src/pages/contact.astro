@@ -1,0 +1,5 @@
+---
+import Base from '../layouts/Base.astro';
+import { resume } from '../data/resume';
+---
+<Base title="Say hello"><section class="wrap page-intro"><p class="eyebrow">LET’S COMPARE NOTES</p><h1>Have a question,<br /><em>or a good rabbit hole?</em></h1><p>I’d be happy to hear from you.</p><div class="contact-options"><a class="button" href={`mailto:${resume.email}`}>Write me an email ↗</a><a class="text-link" href={resume.github}>GitHub ↗</a><a class="text-link" href={resume.linkedin}>LinkedIn ↗</a></div><p class="contact-email">{resume.email}</p></section></Base>

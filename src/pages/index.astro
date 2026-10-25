@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import WritingList from '../components/WritingList.astro';
+import { projects, writing, href, topicUrl } from '../lib/content';
+const selected = (await projects()).filter(p=>p.data.featured).slice(0,2);
+const notes = (await writing()).filter(p=>p.data.featured);
+---
+<Base active="Home">
+  <section class="hero wrap">
+    <div class="hero-copy"><p class="eyebrow"><span class="tiny-star" aria-hidden="true">✳</span> COMPUTER SCIENCE STUDENT · IIIT HYDERABAD</p><h1>Curious about<br />intelligence.<br /><em>Grounded in building.</em></h1><p class="hero-intro">Hi, I’m Yashav. I study computer science, build systems, and ask questions about how machines learn. This is my little corner for the work, the questions, and what I discover along the way.</p><div class="hero-actions"><a class="button" href={href('projects/')}>Explore my work <span aria-hidden="true">↗</span></a><a class="text-link" href={href('resume/')}>A little more about me →</a></div></div>
+    <aside class="hero-aside"><div class="portrait-frame"><img src={href('images/Profilepic.jpg')} alt="Yashav Bhatnagar" width="310" height="380" fetchpriority="high" /><span class="portrait-sticker" aria-hidden="true">always<br />learning ↗</span></div><p class="portrait-caption">Somewhere between<br />“why?” and “let’s try it.”</p></aside>
+  </section>
+  <div class="interest-band"><div class="wrap interest-inner"><span class="eyebrow">FOLLOWING MY CURIOSITY</span><a href={topicUrl('machine-learning')}>Machine learning</a><span aria-hidden="true">✳</span><a href={topicUrl('systems')}>Systems</a><span aria-hidden="true">✳</span><a href={topicUrl('embedded')}>Embedded</a><span aria-hidden="true">✳</span><a href={topicUrl('quantum-computing')}>Quantum computing ↗</a></div></div>
+  <section class="wrap section"><div class="section-heading"><div><p class="eyebrow">01 / LEARNING THROUGH DOING</p><h2>A few things I’ve been working on.</h2></div><a class="text-link" href={href('projects/')}>All projects & research ↗</a></div><div class="project-grid">{selected.map((entry,index)=><ProjectCard entry={entry} index={index+1} />)}</div></section>
+  <section class="wrap section curiosity-section"><div><p class="eyebrow">A NEW THREAD TO FOLLOW</p><h2>And a growing curiosity<br />about the quantum world.</h2></div><div><p>Quantum computing is an emerging interest for me. I want to build a public record of the foundations I explore, without skipping the part where I’m a beginner.</p><a class="text-link" href={topicUrl('quantum-computing')}>Follow this thread ↗</a></div></section>
+  <section class="wrap section"><div class="section-heading"><div><p class="eyebrow">02 / THINKING OUT LOUD</p><h2>From the notebook.</h2></div><a class="text-link" href={href('writing/')}>Articles & notes ↗</a></div><WritingList entries={notes} /></section>
+  <section class="wrap personal-note"><span aria-hidden="true" class="note-star">✳</span><p>Outside the code, I like sitting at the piano, traveling, and finding another excuse to draw. Still practicing. That’s usually the interesting part.</p></section>
+</Base>

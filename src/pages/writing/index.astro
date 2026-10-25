@@ -1,0 +1,7 @@
+---
+import Base from '../../layouts/Base.astro';
+import WritingList from '../../components/WritingList.astro';
+import { writing, topicUrl } from '../../lib/content';
+const entries = await writing();
+---
+<Base title="Articles & Notes" active="Articles & Notes"><div class="wrap"><header class="page-intro"><p class="eyebrow">A NOTEBOOK, LEFT OPEN</p><h1>Things I’m learning.<br /><em>Ideas I’m turning over.</em></h1><p>Longer explanations, small discoveries, and notes from the space between understanding something and being able to explain it.</p></header><div class="writing-legend"><p><strong>Articles & explanations</strong><span>A question, followed a little further.</span></p><p><strong>Notes</strong><span>Smaller observations, with room to grow.</span></p></div><WritingList entries={entries} headingLevel="h2" /><aside class="topic-callout"><span class="eyebrow">A THREAD TO WATCH</span><h2><a href={topicUrl('quantum-computing')}>Quantum computing ↗</a></h2><p>An emerging learning interest. Future notes and projects will collect here as I explore the foundations.</p></aside></div></Base>

@@ -1,0 +1,7 @@
+---
+import { topicName } from '../data/topics';
+import { topicUrl } from '../lib/content';
+interface Props { topics: string[]; }
+const { topics } = Astro.props;
+---
+<div class="topic-tags">{topics.map(topic => <a href={topicUrl(topic)}>{topicName(topic)}</a>)}</div>
