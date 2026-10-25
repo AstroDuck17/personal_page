@@ -15,5 +15,14 @@ const notes = (await writing()).filter(p=>p.data.featured);
   <section class="wrap section"><div class="section-heading"><div><p class="eyebrow">01 / LEARNING THROUGH DOING</p><h2>A few things I’ve been working on.</h2></div><a class="text-link" href={href('projects/')}>All projects & research ↗</a></div><div class="project-grid">{selected.map((entry,index)=><ProjectCard entry={entry} index={index+1} />)}</div></section>
   <section class="wrap section curiosity-section"><div><p class="eyebrow">A NEW THREAD TO FOLLOW</p><h2>And a growing curiosity<br />about the quantum world.</h2></div><div><p>Quantum computing is an emerging interest for me. I want to build a public record of the foundations I explore, without skipping the part where I’m a beginner.</p><a class="text-link" href={topicUrl('quantum-computing')}>Follow this thread ↗</a></div></section>
   <section class="wrap section"><div class="section-heading"><div><p class="eyebrow">02 / THINKING OUT LOUD</p><h2>From the notebook.</h2></div><a class="text-link" href={href('writing/')}>Articles & notes ↗</a></div><WritingList entries={notes} /></section>
-  <section class="wrap personal-note"><span aria-hidden="true" class="note-star">✳</span><p>Outside the code, I like sitting at the piano, traveling, and finding another excuse to draw. Still practicing. That’s usually the interesting part.</p></section>
+  <section class="wrap personal-section" aria-label="Beyond the code">
+    <details class="personal-details">
+      <summary><span><span class="eyebrow">A LITTLE MORE ABOUT ME</span><span class="personal-title">Beyond the code</span></span><span class="disclosure-icon" aria-hidden="true">+</span></summary>
+      <div class="personal-interests">
+        <div><h2>Piano</h2><p>I enjoy spending time at the piano and practicing.</p></div>
+        <div><h2>Drawing</h2><p>I like sketching and experimenting with my drawing style.</p></div>
+        <div><h2>Travel</h2><p>I enjoy visiting new places and exploring beyond the familiar.</p></div>
+      </div>
+    </details>
+  </section>
 </Base>

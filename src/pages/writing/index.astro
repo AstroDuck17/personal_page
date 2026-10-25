@@ -2,6 +2,31 @@
 import Base from '../../layouts/Base.astro';
 import WritingList from '../../components/WritingList.astro';
 import { writing, topicUrl } from '../../lib/content';
+import { topics } from '../../data/topics';
 const entries = await writing();
+const articles = entries.filter(entry => entry.data.type !== 'note');
+const notes = entries.filter(entry => entry.data.type === 'note');
 ---
-<Base title="Articles & Notes" active="Articles & Notes"><div class="wrap"><header class="page-intro"><p class="eyebrow">A NOTEBOOK, LEFT OPEN</p><h1>Things I’m learning.<br /><em>Ideas I’m turning over.</em></h1><p>Longer explanations, small discoveries, and notes from the space between understanding something and being able to explain it.</p></header><div class="writing-legend"><p><strong>Articles & explanations</strong><span>A question, followed a little further.</span></p><p><strong>Notes</strong><span>Smaller observations, with room to grow.</span></p></div><WritingList entries={entries} headingLevel="h2" /><aside class="topic-callout"><span class="eyebrow">A THREAD TO WATCH</span><h2><a href={topicUrl('quantum-computing')}>Quantum computing ↗</a></h2><p>An emerging learning interest. Future notes and projects will collect here as I explore the foundations.</p></aside></div></Base>
+<Base title="Articles & Notes" active="Articles & Notes">
+  <div class="wrap">
+    <header class="page-intro">
+      <p class="eyebrow">A NOTEBOOK, LEFT OPEN</p>
+      <h1>Things I’m learning.<br /><em>Ideas I’m turning over.</em></h1>
+      <p>Longer explanations, small discoveries, and notes from the space between understanding something and being able to explain it.</p>
+    </header>
+    <nav class="writing-topics" aria-label="Browse writing by topic">
+      <span class="eyebrow">BROWSE BY TOPIC</span>
+      <div class="topic-tags">{Object.entries(topics).map(([id, topic]) => <a href={topicUrl(id)}>{topic.name}</a>)}</div>
+    </nav>
+    <div class="writing-columns">
+      <section class="writing-column articles-column" aria-labelledby="articles-heading">
+        <header class="writing-column-heading"><h2 id="articles-heading">Articles & explanations</h2><p>A question, followed a little further.</p></header>
+        {articles.length ? <WritingList entries={articles} /> : <p class="writing-column-empty">Longer pieces will appear here when they’re ready.</p>}
+      </section>
+      <section class="writing-column notes-column" aria-labelledby="notes-heading">
+        <header class="writing-column-heading"><h2 id="notes-heading">Notes</h2><p>Smaller observations, with room to grow.</p></header>
+        {notes.length ? <WritingList entries={notes} /> : <p class="writing-column-empty">Short notes will appear here as I explore.</p>}
+      </section>
+    </div>
+  </div>
+</Base>

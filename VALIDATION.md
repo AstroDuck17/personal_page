@@ -30,6 +30,14 @@ Chromium-based in-app browser; desktop 1280px and mobile 390px viewport. Inspect
 - No warning/error logs appeared in the inspected production browser tab. Reduced-motion behavior was verified in CSS; no animation emulation or formal assistive-technology audit was performed.
 - Ignored local screenshots are in `.qa/` for Home, résumé and note. Local review server remains available at `http://127.0.0.1:4322/personal_page/`; restart instructions are in README.
 
+## Follow-up layout revision · 26 October 2026
+
+- Replaced the inline personal-interests paragraph with an initially closed native details/summary disclosure. Verified Enter opens and closes it without changing the home URL; interests remain hidden when closed.
+- Replaced the disconnected writing legend and full-width list with actual article/note columns at a 7:3 ratio. Browser measurements showed approximately 704px and 302px column widths at the inspected desktop size. The existing draft appears within Notes, with no draft under Articles.
+- Quantum computing is one link in the shared topic row; no separate quantum callout remains on the writing index.
+- Mobile columns stack with no horizontal page overflow in the inspected narrow viewport. Screenshots: `.qa/writing-columns-desktop.jpg` and `.qa/writing-columns-mobile.jpg`.
+- Astro check remained clean; release build and generated-link/draft-exclusion verification passed after the layout revision. Live hosting remains unchanged.
+
 ## Limits and intentional omissions
 
 - Authenticated GitHub Pages settings, branch protection and actual Actions deployment have not been exercised. Workflow is prepared for the existing repository base path; deployment follows review.

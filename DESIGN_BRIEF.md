@@ -20,6 +20,8 @@ All listed live layouts were inspected in the browser during this redesign. Thei
 
 ## Implementation decisions
 
+- Personal interests live inside a native, initially collapsed “Beyond the code” disclosure on Home. Opening it expands the page in place, with keyboard support and no navigation.
+- Writing uses a 70/30 articles/notes grid on desktop and stacks on mobile. Each entry lives under its actual content type; draft is a status, not another category. Quantum computing appears alongside the other topic links, without a separate writing-page callout.
 - Astro produces static HTML, with Markdown content collections and typed résumé data. It adds Node/build dependencies but removes repeated HTML layouts and supports reliable publishing. MDX is available for future explanations where interactive components add value; no client framework is needed now.
 - Shared navigation, spacing, colors, typography and diagrams across routes. Grids/sidebar stack on small screens. Native links, selects, skip link and visible focus states; reduced-motion CSS.
 - Project diagrams are labeled conceptual and contain no invented measurements. Ongoing research has questions and methodology, without manufactured conclusions.
