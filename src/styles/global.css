@@ -81,6 +81,7 @@
   .diagram-solid { fill:var(--olive); }
   .diagram-text { fill:var(--ink); font:11px var(--mono); text-anchor:middle; }
   .diagram-text.inverse { fill:var(--white); }
+  .visual-hardware .diagram-text { font-size:14px; }
   .diagram-label { fill:var(--olive); font:10px var(--mono); text-anchor:middle; letter-spacing:1px; }
   .terminal-text { fill:var(--white); font:16px var(--mono); }
   .muted-terminal { fill:var(--butter); font-size:13px; }

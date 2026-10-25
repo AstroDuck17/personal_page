@@ -10,8 +10,8 @@ const notes = entries.filter(entry => entry.data.type === 'note');
 <Base title="Articles & Notes" active="Articles & Notes">
   <div class="wrap">
     <header class="page-intro">
-      <h1>Articles & notes</h1>
-      <p>Explanations and study notes on the topics I’m working through.</p>
+      <h1>Things I’m <em>learning.</em></h1>
+      <p>Short notes while I’m working something out, and longer explanations when a quick note won’t quite do.</p>
     </header>
     <nav class="writing-topics" aria-label="Browse writing by topic">
       <span class="eyebrow">BROWSE BY TOPIC</span>
@@ -19,12 +19,12 @@ const notes = entries.filter(entry => entry.data.type === 'note');
     </nav>
     <div class="writing-columns">
       <section class="writing-column articles-column" aria-labelledby="articles-heading">
-        <header class="writing-column-heading"><h2 id="articles-heading">Articles & explanations</h2><p>Longer explanations of research and technical topics.</p></header>
-        {articles.length ? <WritingList entries={articles} /> : <p class="writing-column-empty">No articles published yet.</p>}
+        <header class="writing-column-heading"><h2 id="articles-heading">Articles & explanations</h2><p>Longer explanations, with room for the details.</p></header>
+        {articles.length ? <WritingList entries={articles} /> : <p class="writing-column-empty">The first longer piece is still to come.</p>}
       </section>
       <section class="writing-column notes-column" aria-labelledby="notes-heading">
-        <header class="writing-column-heading"><h2 id="notes-heading">Notes</h2><p>Shorter observations and study notes.</p></header>
-        {notes.length ? <WritingList entries={notes} /> : <p class="writing-column-empty">No notes published yet.</p>}
+        <header class="writing-column-heading"><h2 id="notes-heading">Notes</h2><p>Small discoveries and things I’m still working out.</p></header>
+        {notes.length ? <WritingList entries={notes} /> : <p class="writing-column-empty">The first notes are still in the making.</p>}
       </section>
     </div>
   </div>

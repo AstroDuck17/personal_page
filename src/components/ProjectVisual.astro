@@ -7,20 +7,19 @@ const { kind, large = false } = Astro.props;
     <defs><pattern id={`grid-${kind}`} width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="currentColor" opacity=".18" /></pattern></defs>
     <rect width="600" height="330" fill={`url(#grid-${kind})`} />
     {kind === 'hardware' ? <>
-      <rect x="38" y="75" width="160" height="180" rx="12" class="diagram-box" />
-      <text x="118" y="109" class="diagram-text">COMMUNICATION SETTINGS</text>
-      <text x="118" y="144" class="diagram-text">bus / device / address</text>
-      <text x="118" y="174" class="diagram-text">baud / data / stop bits</text>
-      <text x="118" y="204" class="diagram-text">SPI mode / clock speed</text>
-      <text x="118" y="234" class="diagram-text">PWM frequency / duty</text>
-      <path d="M198 165h38M370 165h28v-44h20M398 165v56h20" class="wire" />
-      <rect x="236" y="108" width="134" height="114" rx="12" class="diagram-solid" />
-      <text x="303" y="140" class="diagram-text inverse">RASPBERRY PI</text><text x="303" y="165" class="diagram-text inverse">TEST JIG</text><text x="303" y="193" class="diagram-text inverse">WEB CONTROLS</text>
-      <rect x="418" y="80" width="145" height="82" rx="8" class="diagram-box" />
-      <text x="490" y="107" class="diagram-text">I2C / SPI / UART</text><text x="490" y="136" class="diagram-text">RS485 / MODBUS RTU</text>
-      <rect x="418" y="180" width="145" height="82" rx="8" class="diagram-box" />
-      <text x="490" y="211" class="diagram-text">PWM / GPIO</text><text x="490" y="240" class="diagram-text">ADC VIA ADS1115</text>
-      <text x="300" y="285" class="diagram-label">MULTIPLE PROTOCOLS · CONFIGURABLE COMMUNICATION</text>
+      <path d="M176 157h74M350 157h50M400 101v106M400 101h35M400 154h35M400 207h35" class="wire" />
+      <rect x="50" y="109" width="126" height="96" rx="10" class="diagram-box" />
+      <path d="M50 131h126M72 154h82M72 181h82" class="wire" />
+      {[65,75,85].map(x => <circle cx={x} cy="120" r="2" class="diagram-solid" />)}
+      <circle cx="97" cy="154" r="5" class="diagram-box" /><circle cx="132" cy="181" r="5" class="diagram-box" />
+      <rect x="250" y="100" width="100" height="114" rx="12" class="diagram-solid" />
+      <rect x="280" y="129" width="40" height="44" rx="5" class="diagram-box" />
+      {[119,133,147,161,175,189].map(y => <rect x="259" y={y} width="5" height="5" rx="1" fill="var(--butter)" />)}
+      <rect x="280" y="190" width="16" height="12" rx="2" fill="var(--paper)" /><rect x="303" y="190" width="16" height="12" rx="2" fill="var(--paper)" />
+      {[80,133,186].map(y => <rect x="435" y={y} width="90" height="42" rx="7" class="diagram-box" />)}
+      <circle cx="480" cy="101" r="9" class="wire" /><circle cx="480" cy="101" r="3" class="diagram-solid" />
+      <path d="m451 154 10-7 10 14 10-14 10 14 10-7M456 200h12v14h-12zM478 200h12v14h-12zM500 200h7v14h-7z" class="wire" />
+      <text x="113" y="264" class="diagram-text">Browser</text><text x="300" y="264" class="diagram-text">Test jig</text><text x="480" y="264" class="diagram-text">Devices</text>
     </> : kind === 'physics' ? <>
       {[0,1,2,3].map((i) => <><rect x={64+i*124} y="80" width="100" height="122" rx="8" class="diagram-box" /><path d={`M${74+i*124} 178h80`} class="wire" /><circle cx={90+i*135} cy={150-i*13} r="14" class="diagram-solid" /><text x={114+i*124} y="226" class="diagram-text">t{i ? ` + ${i}` : ''}</text></>)}
       <path d="M104 255H500m-12-8 12 8-12 8" class="wire" /><text x="300" y="294" class="diagram-label">WHAT DOES A VIDEO REPRESENTATION REMEMBER?</text>

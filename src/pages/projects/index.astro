@@ -7,7 +7,7 @@ const entries = await projects();
 const availableTopics = Object.entries(topics).filter(([id])=>entries.some(e=>e.data.topics.some(topic=>topic === id)));
 ---
 <Base title="Projects & Research" active="Projects & Research">
-  <div class="wrap"><header class="page-intro"><h1>Projects & research</h1><p>Projects in machine learning, systems programming and embedded hardware, alongside my ongoing research at Precog.</p></header>
+  <div class="wrap"><header class="page-intro"><h1>Things I’ve been<br /><em>working on.</em></h1><p>Some projects started with coursework, others with a question I wanted to explore. Here’s what I worked on, how I approached it, and what came out of it.</p></header>
     <form class="filter-bar" id="project-filters" aria-label="Filter projects"><label for="topic-filter">Explore by topic</label><select id="topic-filter" name="topic"><option value="all">All topics</option>{availableTopics.map(([id,topic])=><option value={id}>{topic.name}</option>)}</select><label for="type-filter" class="sr-only">Content type</label><select id="type-filter" name="type"><option value="all">Projects & research</option><option value="project">Projects</option><option value="research">Research</option></select><span id="project-count" role="status" aria-live="polite">{entries.length} entries</span></form>
     <h2 class="sr-only">Projects and research</h2><section aria-label="Projects and research" class="project-grid project-index">{entries.map((entry,index)=><ProjectCard entry={entry} index={index+1} />)}</section><p id="no-projects" class="empty-message" hidden>No entries match these filters. Try another topic or content type.</p>
   </div>

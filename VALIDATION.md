@@ -46,6 +46,14 @@ Chromium-based in-app browser; desktop 1280px and mobile 390px viewport. Inspect
 - Inspected the revised homepage and test-jig case in the browser. Narrow-layout checks found no horizontal overflow; the native disclosure still toggles with Enter. Moved the diagram's bottom label up after spotting an overlap with its caption on mobile.
 - Astro check, production build and generated link/asset/CV/draft-exclusion checks pass. No dependency or deployment changes; the live site remains untouched.
 
+## Follow-up tone balance and simple cover · 26 October 2026
+
+- Researched personal wording on Maggie Appleton, Julia Evans, Josh Comeau and Andrej Karpathy's own pages. Sources and editorial interpretation are in `DESIGN_BRIEF.md`.
+- Followed the user's clarified scope: Humanizer primarily guides technical explanations. Restored conversational introductions, invitations, notebook copy and light personal asides. Technical project content, dates, results and the corrected browser-interface contribution were not changed in this revision.
+- Simplified the hardware cover to browser controls, a board and connected device icons. The SVG contains only three text labels: Browser, Test jig, Devices. Protocol settings remain in the case study.
+- Browser-inspected the homepage and hardware case in the narrow layout: page width 429px within a 443px viewport, with no horizontal overflow. Saved `.qa/simple-test-jig.jpg`; the cover has no text/caption overlap.
+- Astro check returned zero errors/warnings/hints; the release build and generated-link/asset/CV/draft-exclusion verifier passed. Nothing was pushed or deployed.
+
 ## Limits and intentional omissions
 
 - Authenticated GitHub Pages settings, branch protection and actual Actions deployment have not been exercised. Workflow is prepared for the existing repository base path; deployment follows review.
