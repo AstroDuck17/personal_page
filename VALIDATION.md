@@ -1,5 +1,12 @@
 # Validation record
 
+## Homepage intro/portrait spacing · 26 October 2026
+
+- Limited implementation changes to hero layout CSS. At 1440px, the former 836px text column contained paragraphs capped at 580px, leaving a 320px paragraph-to-portrait gap. Capped the column itself at 580px with a 56px gap, preserving text line lengths. Removed the portrait's 30px top padding so its frame centers against the full introduction.
+- Original photo, object fit/position, arch, frame dimensions, palette, typography, copy and buttons retained. Tablet gap is 32px. Mobile keeps text/buttons first and a 135px portrait below, with a 32px gap.
+- Before/after screenshots inspected at 1440×900, 834×1112 and 390×844; saved as .qa/portrait-{before,after}-{desktop,tablet,mobile}.jpg. Additional geometry checks at 1920, 768 and 360px found no horizontal overflow. Desktop frame stays 260px; tablet 220px; mobile 135px. Viewport override reset after testing.
+- Release build and generated-page verifier passed. No push or deployment; local review only.
+
 Current decision, 26 October 2026: custom-domain exploration is cancelled. Removed the options and migration plan from DEPLOYMENT.md; retain the default GitHub Pages address and existing URL configuration. Deployment workflow improvements remain in place. Earlier research entries below are historical.
 
 ## Deployment research and consolidation · 26 October 2026
