@@ -60,7 +60,7 @@ Work directly on `main` and push to `origin/main`; a separate redesign branch an
 
 Run the checks above, commit reviewed changes on `main`, then run `git push origin main` when ready to publish. A push triggers `.github/workflows/deploy.yml`. Check the Actions result and the existing public URL afterward. The explanatory writing draft stays excluded from release builds.
 
-There is one deployment workflow, using Node 24: install the lockfile, check, build, verify, upload dist and deploy. Pull requests only validate; main pushes publish. Same-ref runs are serialized so active deployments are not interrupted. See [DEPLOYMENT.md](DEPLOYMENT.md) for verified remote state, recovery and custom-domain options.
+There is one deployment workflow, using Node 24: install the lockfile, check, build, verify, upload dist and deploy. Pull requests only validate; main pushes publish. Same-ref runs are serialized so active deployments are not interrupted. Keep the default GitHub Pages address; no custom-domain migration is planned. See [DEPLOYMENT.md](DEPLOYMENT.md) for verified remote state and recovery.
 
 `astro.config.mjs` sets site to `https://AstroDuck17.github.io` and base to `/personal_page`. All links/assets use `src/lib/content.ts`. Keep these unless moving the site. `/index.html`, `/projects.html`, `/resume.html`, `/contact.html`, `/about.html`, `/cv.pdf`, and existing image paths are preserved in output; .html compatibility pages lead to new routes. Root 404.html returns to the base-aware home.
 

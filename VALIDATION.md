@@ -1,5 +1,7 @@
 # Validation record
 
+Current decision, 26 October 2026: custom-domain exploration is cancelled. Removed the options and migration plan from DEPLOYMENT.md; retain the default GitHub Pages address and existing URL configuration. Deployment workflow improvements remain in place. Earlier research entries below are historical.
+
 ## Deployment research and consolidation · 26 October 2026
 
 - GitHub API confirmed workflow publishing, built status, HTTPS enforced and no custom domain. Both previous workflows successfully deployed remote commit 175d122.
