@@ -1,5 +1,14 @@
 # Validation record
 
+## Root-hosting migration — local preparation · 26 October 2026
+
+- Recovery baseline: da5c93c5401bc582b971fc2060aa8460d3866cf6; clean working tree. Original origin remains https://github.com/AstroDuck17/personal_page.git. No repository rename, settings change, remote update, push or deployment in this pass.
+- Root site/base and canonical/sharing URLs verified. Build emits 22 explicit old-path redirects for published pages/legacy aliases and a byte-identical old CV copy. Review builds never generate draft compatibility routes; unknown paths remain real 404s.
+- Astro check clean. Release build/verifier: 45 HTML files; review build/verifier: 46 HTML files. Final dist is release mode. Every compatibility target, JS query/fragment preservation, both CV hashes, root assets/fonts, links/fragments and valid document safeguards pass.
+- Local production preview passed 35 HTTP checks. Browser inspection covered Home, Projects, MetaFam, Résumé, Writing, a topic and 404 at 1440px and 390px. Actual browser old-path redirects preserved homepage/project/alias query parameters and section fragments.
+- Negative fixtures proved that stale prefixes, loops, modified compatibility CV and draft compatibility output are rejected. Fixtures restored; clean release verifier passed afterward. Design, content, CV bytes, dependency files and workflow match the baseline.
+- Full approach, exact future GitHub steps, recovery and remaining hosting limitations: MIGRATION.md. Current production preview: http://127.0.0.1:4330/. Historical project-path instructions and checks below describe earlier deployments.
+
 ## Editorial identity and project navigation · 26 October 2026
 
 - Replaced the header starburst with a text-only Fraunces wordmark: upright dark Yashav and italic olive Bhatnagar. Preserved the home href/accessible name and DM Sans subtitle at all sizes. The bundled italic asset is scoped to a wordmark-only font family so existing hero italics do not change.

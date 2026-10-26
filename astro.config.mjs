@@ -3,14 +3,15 @@ import mdx from '@astrojs/mdx';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import { unified } from '@astrojs/markdown-remark';
+import compatibilityAssets from './scripts/compatibility-assets.mjs';
 
 export default defineConfig({
-  site: 'https://AstroDuck17.github.io',
-  base: '/personal_page',
+  site: 'https://astroduck17.github.io',
+  base: '/',
   output: 'static',
   compressHTML: true,
   trailingSlash: 'always',
-  integrations: [mdx()],
+  integrations: [mdx(), compatibilityAssets],
   markdown: {
     shikiConfig: { theme: 'github-light' },
     processor: unified({

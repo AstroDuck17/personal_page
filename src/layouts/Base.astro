@@ -8,7 +8,8 @@ import { resume } from '../data/resume';
 interface Props { title?: string; description?: string; active?: string; noindex?: boolean; }
 const { title, description = 'Yashav Bhatnagar, a computer science student at IIIT Hyderabad. Projects and research in machine learning, systems and embedded hardware.', active = '', noindex = false } = Astro.props;
 const nav = [['Home', ''], ['Projects & Research', 'projects/'], ['Articles & Notes', 'writing/'], ['Résumé', 'resume/']];
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const canonicalPath = Astro.url.pathname === '/404/' ? '/404.html' : Astro.url.pathname;
+const canonical = new URL(canonicalPath, Astro.site);
 ---
 <!doctype html>
 <html lang="en">

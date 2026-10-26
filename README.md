@@ -1,6 +1,6 @@
 # Yashav Bhatnagar’s website
 
-Static Astro site for the existing **https://AstroDuck17.github.io/personal_page/** address. Four main pages, individual entries and shared topic collections. No server, subscription, or paid template.
+Static Astro site prepared for **https://astroduck17.github.io/**. The repository rename and root-site publication are pending; do not push this migration before the cutover in [MIGRATION.md](MIGRATION.md). Four main pages, individual entries and shared topic collections. No server, subscription, or paid template.
 
 ## Develop and review
 
@@ -11,13 +11,13 @@ npm ci
 npm run dev
 ```
 
-Normal preview: `http://127.0.0.1:4321/personal_page/`. For editorial review:
+Normal preview: `http://127.0.0.1:4321/`. For editorial review:
 
 ```sh
 npm run dev:review
 ```
 
-Review preview: **http://127.0.0.1:4322/personal_page/**. A review banner and `noindex` mark this as unpublished. The graph-evaluation note appears only here. If default Node is still version 22, run bundled Node 24 directly in PowerShell:
+Review preview: **http://127.0.0.1:4322/**. A review banner and `noindex` mark this as unpublished. The graph-evaluation note appears only here. If default Node is still version 22, run bundled Node 24 directly in PowerShell:
 
 ```powershell
 & 'C:\Users\Dell\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe' scripts/review.mjs dev
@@ -50,7 +50,9 @@ npm run verify
 npm run preview
 ```
 
-The verifier checks generated links/fragments, Pages base, font/assets, unique IDs, primary headings, legacy URLs, approved CV bytes and draft exclusion. It does not verify external websites or replace browser checks. Final results: `VALIDATION.md`.
+The verifier checks root links/fragments, canonical/sharing URLs, font/assets, HTML structure, unique IDs, primary headings, compatibility redirects (including query/fragment preservation), both approved CV copies and draft exclusion. It does not verify external websites or replace browser checks. Final results: `VALIDATION.md`.
+
+For the root production preview used in migration review, run `npm run preview -- --host 127.0.0.1 --port 4330`, then `node scripts/verify-preview.mjs http://127.0.0.1:4330`. This checks rendered routes, all old-path redirect responses, missing/draft 404s and both CV downloads over local HTTP.
 
 Review build: `npm run build:review`, then `node scripts/verify-build.mjs --review`. **Rebuild normally afterward** so dist is the release artifact.
 
@@ -58,10 +60,10 @@ Review build: `npm run build:review`, then `node scripts/verify-build.mjs --revi
 
 Work directly on `main` and push to `origin/main`; a separate redesign branch and pull request are no longer part of this workflow. GitHub Pages uses GitHub Actions for deployment. These conventions were confirmed by the owner after the initial redesign.
 
-Run the checks above, commit reviewed changes on `main`, then run `git push origin main` when ready to publish. A push triggers `.github/workflows/deploy.yml`. Check the Actions result and the existing public URL afterward. The explanatory writing draft stays excluded from release builds.
+Before the root migration is published, follow [MIGRATION.md](MIGRATION.md): rename the existing repository, update the remote, then push reviewed main. After cutover, ordinary reviewed changes can use `git push origin main`. A push triggers `.github/workflows/deploy.yml`. The explanatory writing draft stays excluded from release builds.
 
-There is one deployment workflow, using Node 24: install the lockfile, check, build, verify, upload dist and deploy. Pull requests only validate; main pushes publish. Same-ref runs are serialized so active deployments are not interrupted. Keep the default GitHub Pages address; no custom-domain migration is planned. See [DEPLOYMENT.md](DEPLOYMENT.md) for verified remote state and recovery.
+There is one deployment workflow, using Node 24: install the lockfile, check, build, verify, upload dist and deploy. Pull requests only validate; main pushes publish. Same-ref runs are serialized so active deployments are not interrupted. The root site uses the default GitHub domain, without a custom domain. See [DEPLOYMENT.md](DEPLOYMENT.md).
 
-`astro.config.mjs` sets site to `https://AstroDuck17.github.io` and base to `/personal_page`. All links/assets use `src/lib/content.ts`. Keep these unless moving the site. `/index.html`, `/projects.html`, `/resume.html`, `/contact.html`, `/about.html`, `/cv.pdf`, and existing image paths are preserved in output; .html compatibility pages lead to new routes. Root 404.html returns to the base-aware home.
+`astro.config.mjs` sets site to `https://astroduck17.github.io` and base to `/`. All normal links/assets use root URLs through `src/lib/content.ts`. Published old addresses under `/personal_page/` get static compatibility HTML; aliases go directly to final pages, and the old CV gets a build-time copy. Unknown pages keep 404 behavior. See [MIGRATION.md](MIGRATION.md) for limitations and cutover tests.
 
-Read-only API inspection confirmed Actions publishing, HTTPS enforcement and successful runs at remote commit 175d122. The consolidated workflow still needs its first remote run after publication. Configuration follows the [official GitHub Pages workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+The retained workflow previously deployed the project-path site successfully. Root hosting has only been validated locally; its first remote deployment remains pending. Configuration follows the [official GitHub Pages workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).

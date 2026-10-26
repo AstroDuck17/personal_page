@@ -1,30 +1,40 @@
 # Deployment guide
 
-Researched 26 October 2026. Work directly on main; no separate publishing branch.
+## Root-hosting migration pending
 
-## Verified current state
+The code is locally prepared for https://astroduck17.github.io/ with base `/`. The public project-path site and Git remote have not been changed during preparation. Follow [MIGRATION.md](MIGRATION.md) for the exact rename, cutover and recovery steps. Do not push the root configuration into the old repository before that review.
 
-GitHub's authenticated read-only API reports build_type=workflow, HTTPS enforced, status=built and no custom domain. Current URL: https://astroduck17.github.io/personal_page/.
+The owner will rename the existing repository from `personal_page` to `astroduck17.github.io`, preserving history. No custom domain or DNS change is involved. The local checkout folder can retain its current name.
 
-The latest remote commit inspected was 175d122. Both deployment workflows successfully deployed it: [added workflow](https://github.com/AstroDuck17/personal_page/actions/runs/40233737015) and [earlier workflow](https://github.com/AstroDuck17/personal_page/actions/runs/40233736947). The hosting service is still GitHub Pages; GitHub Actions now builds and publishes its files instead of publishing directly from a branch.
+## Retained deployment pipeline
 
-## Prepared cleanup
+`.github/workflows/deploy.yml` is unchanged by this migration. It uses Node 24, installs the existing lockfile, checks, builds, verifies, uploads dist and deploys on main. Pull requests only validate. Deploy permissions are scoped to the deploy job; same-ref runs are serialized, with bounded job durations.
 
-Only .github/workflows/deploy.yml remains. It retains the previously successful explicit build pipeline: npm ci, check, build, verify, upload dist, deploy. Node 24 matches this project's package.json; the previous 22.23.4 version met Astro's installed engine requirement but differed from the project's declared engine.
+No new tokens, dependencies, paid hosting, middleware or gh-pages branch are required. The build configuration emits compatibility HTML for published old pages and a byte-identical old-path CV copy before the existing verifier runs. Versions and dependency files remain unchanged.
 
-The workflow excludes review drafts, grants deployment permissions only to the deploy job, prevents overlapping runs for the same ref, sets job timeouts and deploys only main. Pull requests can run checks without publishing. Manual execution is available. This does not require personal access tokens or a separate gh-pages branch.
+## Local validation
 
-Versions are retained from the earlier successful workflow rather than upgraded during consolidation. YAML parsing and local build checks cannot confirm a GitHub-hosted run; verify the first run after this change is pushed.
+Run with Node 24 and npm:
 
-Source: [GitHub custom Pages workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages), [deployment concurrency](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/control-deployments).
+```sh
+npm run check
+npm run build
+npm run verify
+npm run preview -- --host 127.0.0.1 --port 4330
+```
 
-## Publishing and recovery
+In another terminal:
 
-1. Run npm run check, npm run build and npm run verify using Node 24.
-2. Commit reviewed changes on main. Push with git push origin main when publication is approved.
-3. Check the single workflow's build and deploy jobs. Open Home, a project, the CV download, a legacy HTML route and a missing route on the public site. Confirm the draft URL is absent.
-4. If a release is bad, use git revert on its commit, then push main again. Prefer this over rewriting shared main history. If the build fails, resolve the reported check before rerunning; deployment depends on a successful build.
+```sh
+node scripts/verify-preview.mjs http://127.0.0.1:4330
+```
 
-## Site address
+For editorial review, `npm run build:review` followed by `node scripts/verify-build.mjs --review` verifies review content while still excluding draft compatibility pages. Rebuild normally afterward so dist is the release artifact.
 
-Keep the default GitHub Pages address: https://astroduck17.github.io/personal_page/. The owner cancelled custom-domain exploration on 26 October 2026. No domain registration or DNS migration is planned. Keep Astro's current site origin and /personal_page base.
+## After the approved cutover
+
+Work directly on main. Run the checks, commit reviewed changes and push main to the renamed repository. Watch the single Actions workflow; confirm both build and deploy succeed. Test root navigation, assets, CV, actual 404s and old compatibility URLs in the browser. A failed build prevents deployment.
+
+For a bad ordinary release, revert its commit and push main again rather than rewriting shared history. The initial root migration also depends on repository naming: reverting only its code while keeping the user-site repository name is not a complete rollback. See MIGRATION.md.
+
+Sources: [GitHub custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages), [user-site naming](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages), [repository renaming](https://docs.github.com/en/repositories/creating-and-managing-repositories/renaming-a-repository).

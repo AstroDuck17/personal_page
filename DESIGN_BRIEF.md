@@ -29,7 +29,7 @@ All listed live layouts were inspected in the browser during this redesign. Thei
 - Shared navigation, spacing, colors, typography and diagrams across routes. Grids/sidebar stack on small screens. Native links, selects, skip link and visible focus states; reduced-motion CSS.
 - Project diagrams are labeled conceptual and contain no invented measurements. Ongoing research has questions and methodology, without manufactured conclusions.
 - Local review includes the visibly labeled unpublished note. Release builds exclude draft routes, cards and related links. Draft source in a public repository remains public.
-- Preserve GitHub Pages `/personal_page/` and old `.html` addresses through generated compatibility pages. Publication remains a separate step after review.
+- Host normal pages at `/`; preserve published `/personal_page/` and old `.html` addresses through generated compatibility pages. The repository rename and publication remain separate steps after local review; see MIGRATION.md.
 
 ## Tone references, inspected 26 October 2026
 
