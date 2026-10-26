@@ -1,5 +1,11 @@
 # Validation record
 
+## Centered hero composition · 26 October 2026
+
+- Added a hero-inner container sized to the existing text (580px), gap (56px) and portrait (260px): 896px total, centered inside the unchanged outer page width. Tablet uses an 832px cap; stacked mobile uses a 580px cap. Text stays left-aligned.
+- Inspected rendered views at 1920×1080, 1366×900 and 390×844. Inner left/right space measured 172/172px on wide desktop and 132/132px on laptop. Paragraphs remain 580px on both; mobile retains the 135px portrait after the copy/buttons. No horizontal overflow.
+- Screenshots: .qa/hero-centered-wide.jpg, .qa/hero-centered-laptop.jpg and .qa/hero-centered-mobile.jpg. Viewport override reset after inspection. Photo, crop, frame, typography, colors, text, buttons, navigation widths and other sections were preserved. No deployment.
+
 ## Homepage intro/portrait spacing · 26 October 2026
 
 - Limited implementation changes to hero layout CSS. At 1440px, the former 836px text column contained paragraphs capped at 580px, leaving a 320px paragraph-to-portrait gap. Capped the column itself at 580px with a 56px gap, preserving text line lengths. Removed the portrait's 30px top padding so its frame centers against the full introduction.
