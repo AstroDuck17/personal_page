@@ -30,7 +30,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <a href="#main" class="skip-link">Skip to content</a>
     {reviewMode && <aside class="review-banner">Local review · includes unpublished drafts. Release builds exclude them.</aside>}
     <header class="site-header wrap">
-      <a class="brand" href={href()} aria-label="Yashav Bhatnagar, home"><span class="brand-flower" aria-hidden="true">✳</span><span>Yashav Bhatnagar<span class="brand-sub">CSE student · IIIT Hyderabad</span></span></a>
+      <a class="brand" href={href()} aria-label="Yashav Bhatnagar, home"><span class="brand-name">Yashav <em>Bhatnagar</em></span><span class="brand-sub">CSE student · IIIT Hyderabad</span></a>
       <nav aria-label="Main navigation">{nav.map(([label, path]) => <a href={href(path)} aria-current={active === label ? 'page' : undefined}>{label}</a>)}</nav>
     </header>
     <main id="main" tabindex="-1"><slot /></main>

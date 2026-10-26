@@ -14,7 +14,7 @@ const relatedWriting = (await writing()).filter(item=>d.related.includes(item.id
 const relatedProjects = (await projects()).filter(item=>d.related.includes(item.id));
 ---
 <Base title={d.title} description={d.description} active="Projects & Research" noindex={d.draft}>
-  <article class="wrap case-study"><nav class="case-nav" aria-label="Project sections"><a href={href('projects/')}>← All work</a><div>{headings.filter(h=>h.depth===2).map(h=><a href={`#${h.slug}`}>{h.text.replace('My ', '')}</a>)}</div></nav>
+  <article class="wrap case-study"><nav class="case-nav" aria-label="Project sections"><a href={href('projects/')}>← All work</a><div>{headings.filter(h=>h.depth===2).map(h=><a href={`#${h.slug}`}>{h.text}</a>)}</div></nav>
     <header class="case-header"><p class="eyebrow">{d.type.toUpperCase()} / {d.status.toUpperCase()}{d.dateLabel && ` / ${d.dateLabel}`}</p><h1>{d.title}</h1><p class="case-description">{d.description}</p><Topics topics={d.topics} /></header>
     <ProjectVisual kind={d.visual} large />
     <dl class="case-facts"><div><dt>My role</dt><dd>{d.role}</dd></div><div><dt>Context</dt><dd>{d.context}</dd></div><div><dt>Built with</dt><dd>{d.stack.join(' · ')}</dd></div></dl>

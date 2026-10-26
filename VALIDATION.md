@@ -1,5 +1,14 @@
 # Validation record
 
+## Editorial identity and project navigation · 26 October 2026
+
+- Replaced the header starburst with a text-only Fraunces wordmark: upright dark Yashav and italic olive Bhatnagar. Preserved the home href/accessible name and DM Sans subtitle at all sizes. The bundled italic asset is scoped to a wordmark-only font family so existing hero italics do not change.
+- Homepage interest separators are 1px vertical rules, omitted at wrapping/tablet/mobile widths. Replaced the favicon with a self-contained serif Y path in the existing butter/olive colors; inspected at 16, 32 and 64px using a temporary local fixture, removed before building.
+- Project navigation displays complete heading labels, including My contribution, with the existing slugs and IDs. Links are 13.6px with padding and cannot shrink. Desktop/tablet retain contained overflow; mobile links wrap into two rows. Added mobile anchor clearance beneath the sticky panel.
+- Browser-inspected Home, Hardware Test Jig and Résumé at 1440×1000, 834×1112 and 390×844; checked 360px wrapping and keyboard focus. No page overflow. Subtitle stays visible; wordmark does not collide with navigation; italic font reports loaded. Verified skip-to-main focus, home link focus, fully visible final section-link focus and contribution jumps clear of the sticky navigation on desktop/mobile.
+- Screenshots: .qa/editorial-{home,project,resume}-{desktop,tablet,mobile}.jpg, .qa/editorial-wordmark-focus.jpg, .qa/editorial-project-keyboard-mobile.jpg, .qa/editorial-project-jump-mobile.jpg and .qa/editorial-favicon-sizes.jpg.
+- Astro check: zero errors/warnings/hints. Production build and 23-page verifier passed, including fonts/assets, links, fragments, CV checksum and draft exclusion. Verified contribution labels and unchanged anchors on all eight project pages. No project descriptions, résumé data, planned destinations, photography, hero composition or deployment changes.
+
 ## Centered hero composition · 26 October 2026
 
 - Added a hero-inner container sized to the existing text (580px), gap (56px) and portrait (260px): 896px total, centered inside the unchanged outer page width. Tablet uses an 832px cap; stacked mobile uses a 580px cap. Text stays left-aligned.
