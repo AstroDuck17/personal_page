@@ -1,6 +1,6 @@
 # Yashav Bhatnagar’s website
 
-Static Astro site prepared for **https://astroduck17.github.io/**. The repository rename and root-site publication are pending; do not push this migration before the cutover in [MIGRATION.md](MIGRATION.md). Four main pages, individual entries and shared topic collections. No server, subscription, or paid template.
+Static Astro site published at **https://astroduck17.github.io/**. The existing repository was renamed to `astroduck17.github.io`, preserving history. Root-hosting cutover and compatibility redirects are complete; see [MIGRATION.md](MIGRATION.md). Four main pages, individual entries and shared topic collections. No server, subscription, or paid template.
 
 ## Develop and review
 
@@ -60,10 +60,10 @@ Review build: `npm run build:review`, then `node scripts/verify-build.mjs --revi
 
 Work directly on `main` and push to `origin/main`; a separate redesign branch and pull request are no longer part of this workflow. GitHub Pages uses GitHub Actions for deployment. These conventions were confirmed by the owner after the initial redesign.
 
-Before the root migration is published, follow [MIGRATION.md](MIGRATION.md): rename the existing repository, update the remote, then push reviewed main. After cutover, ordinary reviewed changes can use `git push origin main`. A push triggers `.github/workflows/deploy.yml`. The explanatory writing draft stays excluded from release builds.
+Use `git push origin main` for reviewed changes. Origin points to `https://github.com/AstroDuck17/astroduck17.github.io.git`. A push triggers `.github/workflows/deploy.yml`. The explanatory writing draft stays excluded from release builds.
 
 There is one deployment workflow, using Node 24: install the lockfile, check, build, verify, upload dist and deploy. Pull requests only validate; main pushes publish. Same-ref runs are serialized so active deployments are not interrupted. The root site uses the default GitHub domain, without a custom domain. See [DEPLOYMENT.md](DEPLOYMENT.md).
 
 `astro.config.mjs` sets site to `https://astroduck17.github.io` and base to `/`. All normal links/assets use root URLs through `src/lib/content.ts`. Published old addresses under `/personal_page/` get static compatibility HTML; aliases go directly to final pages, and the old CV gets a build-time copy. Unknown pages keep 404 behavior. See [MIGRATION.md](MIGRATION.md) for limitations and cutover tests.
 
-The retained workflow previously deployed the project-path site successfully. Root hosting has only been validated locally; its first remote deployment remains pending. Configuration follows the [official GitHub Pages workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+The root migration deployed successfully at commit 39cbaaf, with public compatibility URLs and CV downloads verified. Configuration follows the [official GitHub Pages workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).

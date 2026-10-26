@@ -1,10 +1,10 @@
 # Deployment guide
 
-## Root-hosting migration pending
+## Current hosting
 
-The code is locally prepared for https://astroduck17.github.io/ with base `/`. The public project-path site and Git remote have not been changed during preparation. Follow [MIGRATION.md](MIGRATION.md) for the exact rename, cutover and recovery steps. Do not push the root configuration into the old repository before that review.
+The site is deployed at https://astroduck17.github.io/ with base `/`. The root migration at commit 39cbaaf passed GitHub Actions and public verification. Follow [MIGRATION.md](MIGRATION.md) for the recorded cutover, compatibility design and recovery baseline.
 
-The owner will rename the existing repository from `personal_page` to `astroduck17.github.io`, preserving history. No custom domain or DNS change is involved. The local checkout folder can retain its current name.
+The owner renamed the existing repository from `personal_page` to `astroduck17.github.io`, preserving history. Origin is now `https://github.com/AstroDuck17/astroduck17.github.io.git`. No custom domain or DNS change was involved. The local checkout folder retains its original name.
 
 ## Retained deployment pipeline
 
@@ -31,7 +31,7 @@ node scripts/verify-preview.mjs http://127.0.0.1:4330
 
 For editorial review, `npm run build:review` followed by `node scripts/verify-build.mjs --review` verifies review content while still excluding draft compatibility pages. Rebuild normally afterward so dist is the release artifact.
 
-## After the approved cutover
+## Publishing reviewed changes
 
 Work directly on main. Run the checks, commit reviewed changes and push main to the renamed repository. Watch the single Actions workflow; confirm both build and deploy succeed. Test root navigation, assets, CV, actual 404s and old compatibility URLs in the browser. A failed build prevents deployment.
 

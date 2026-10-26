@@ -1,4 +1,10 @@
-# Root-hosting migration — local preparation
+# Root-hosting migration
+
+## Cutover completed · 26 October 2026
+
+The owner confirmed the existing repository was renamed. Origin was updated to `https://github.com/AstroDuck17/astroduck17.github.io.git`, and preparation commit 39cbaaf was pushed to main. [GitHub Actions build and deploy](https://github.com/AstroDuck17/astroduck17.github.io/actions/runs/40376952433) both succeeded. Pages reports the root URL, workflow publishing, HTTPS enforced and no custom domain.
+
+Public verification passed 34 HTTP checks: root pages, all 22 compatibility HTML pages, genuine missing/draft 404s and unchanged CV bytes at both URLs. Real browser tests preserved query strings and section fragments through the old homepage, MetaFam detail and résumé HTML alias. The root homepage was visually inspected after publication. No GitHub settings were changed by the agent.
 
 ## Recovery baseline
 
@@ -11,7 +17,7 @@ Recorded 26 October 2026 before edits:
 - CV SHA-256: `eee4e4bdfb1ed4e2634c3c231f88b27569bda182808afa9e9a33f3942900d3d8`.
 - Dependency versions and lockfile must remain unchanged.
 
-This pass is local only. Do not push until the repository rename and cutover are approved. Remote name/settings/publication are unchanged.
+The preparation pass at commit 39cbaaf was local only. Its recovery baseline is retained above; the separately authorized cutover is recorded at the top of this document.
 
 ## Implementation
 
@@ -49,9 +55,9 @@ The build verifier independently reads content frontmatter to calculate publishe
 - Git comparison confirms no changes to package.json, package-lock.json, original CV, content collections, résumé/topic data, styles or deployment workflow. No remote operations or publication performed.
 - Screenshots are ignored local artifacts: `.qa/root-{home,projects,metafam,resume,writing,topic,404}-{desktop,mobile}.jpg`.
 
-No implementation issue remains from these checks. Actual repository-name availability, GitHub user-site routing and the renamed repository's first Actions deployment remain cutover checks. Query/fragment retention with scripting disabled has the static-HTML limitation described above.
+No implementation issue remains from these checks. GitHub user-site routing and the renamed repository's first Actions deployment were subsequently verified during cutover. Query/fragment retention with scripting disabled has the static-HTML limitation described above.
 
-## Next pass: exact cutover steps (not executed)
+## Approved cutover procedure (completed)
 
 1. Approve the local production preview and commit the reviewed migration locally on main. Confirm the working tree is clean. Retain the recovery commit above.
 2. Check that the account does not already have a user-site repository named `astroduck17.github.io`. GitHub permits one user site per account; resolve any collision before renaming.

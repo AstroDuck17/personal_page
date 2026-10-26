@@ -1,5 +1,12 @@
 # Validation record
 
+## Root cutover completed · 26 October 2026
+
+- Owner confirmed the existing repository rename. Updated origin to https://github.com/AstroDuck17/astroduck17.github.io.git and pushed preparation commit 39cbaaf to main, as authorized.
+- GitHub Actions run 40376952433 passed build/check/verify and deployed successfully. Pages reports https://astroduck17.github.io/, workflow publishing, HTTPS enforced and no custom domain. No repository settings were changed by the agent.
+- Public smoke test passed 34 HTTP checks covering root pages, every compatibility HTML URL, unknown/draft 404s and both approved CV hashes. Browser redirects preserved repeated/encoded query parameters and project/résumé section fragments. Published root homepage screenshot: .qa/root-published-home.jpg.
+- Preparation-only restrictions and old remote information below are historical recovery records. Current publishing instructions are in README.md and DEPLOYMENT.md.
+
 ## Root-hosting migration — local preparation · 26 October 2026
 
 - Recovery baseline: da5c93c5401bc582b971fc2060aa8460d3866cf6; clean working tree. Original origin remains https://github.com/AstroDuck17/personal_page.git. No repository rename, settings change, remote update, push or deployment in this pass.
