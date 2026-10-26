@@ -1,5 +1,12 @@
 # Validation record
 
+## Deployment research and consolidation · 26 October 2026
+
+- GitHub API confirmed workflow publishing, built status, HTTPS enforced and no custom domain. Both previous workflows successfully deployed remote commit 175d122.
+- Consolidated the already successful Node 24 check/build/verify pipeline into deploy.yml and removed pages.yml. Added bounded job durations and serialized same-ref runs. Deployment remains restricted to main, with deployment permissions scoped to that job.
+- Parsed workflow YAML successfully. Astro check returned zero errors, warnings or hints; release build and verification of 23 HTML pages passed. No GitHub-hosted run of the consolidated file has occurred yet; this needs checking after it is pushed.
+- Added DEPLOYMENT.md with primary-source research, domain choices, price references, DNS migration notes and the two remaining hardcoded URL/base locations to update when a domain is selected. No domain purchase, DNS update, settings mutation or remote push performed.
+
 ## Current handoff · footer and résumé cleanup
 
 - Owner confirmed the current workflow: work directly on main, push to main, deploy through GitHub Actions. The earlier branch-based publishing instructions below are historical. Current committed baseline at resumption: 175d122; portrait alignment and the larger expandable interests heading are included.

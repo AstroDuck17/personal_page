@@ -58,10 +58,10 @@ Review build: `npm run build:review`, then `node scripts/verify-build.mjs --revi
 
 Work directly on `main` and push to `origin/main`; a separate redesign branch and pull request are no longer part of this workflow. GitHub Pages uses GitHub Actions for deployment. These conventions were confirmed by the owner after the initial redesign.
 
-Run the checks above, commit reviewed changes on `main`, then push to `origin main` when ready to publish. A push triggers the deployment workflows. Check the Actions result and the existing public URL afterward. The explanatory writing draft stays excluded from release builds.
+Run the checks above, commit reviewed changes on `main`, then run `git push origin main` when ready to publish. A push triggers `.github/workflows/deploy.yml`. Check the Actions result and the existing public URL afterward. The explanatory writing draft stays excluded from release builds.
 
-The checkout currently contains both `.github/workflows/deploy.yml` (the added Astro deployment workflow, Node 22.23.4) and `.github/workflows/pages.yml` (the earlier check/build/verify/deploy workflow, Node 24). Both listen for pushes to main; consolidating them is still outstanding. No workflow settings were changed during the footer/résumé cleanup.
+There is one deployment workflow, using Node 24: install the lockfile, check, build, verify, upload dist and deploy. Pull requests only validate; main pushes publish. Same-ref runs are serialized so active deployments are not interrupted. See [DEPLOYMENT.md](DEPLOYMENT.md) for verified remote state, recovery and custom-domain options.
 
 `astro.config.mjs` sets site to `https://AstroDuck17.github.io` and base to `/personal_page`. All links/assets use `src/lib/content.ts`. Keep these unless moving the site. `/index.html`, `/projects.html`, `/resume.html`, `/contact.html`, `/about.html`, `/cv.pdf`, and existing image paths are preserved in output; .html compatibility pages lead to new routes. Root 404.html returns to the base-aware home.
 
-Actual GitHub Pages settings and authenticated remote workflow execution remain unverified. Prepared configuration follows the [official Astro Pages guide](https://docs.astro.build/en/guides/deploy/github/).
+Read-only API inspection confirmed Actions publishing, HTTPS enforcement and successful runs at remote commit 175d122. The consolidated workflow still needs its first remote run after publication. Configuration follows the [official GitHub Pages workflow guide](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
