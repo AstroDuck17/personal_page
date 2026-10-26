@@ -1,5 +1,14 @@
 # Validation record
 
+## Current handoff · footer and résumé cleanup
+
+- Owner confirmed the current workflow: work directly on main, push to main, deploy through GitHub Actions. The earlier branch-based publishing instructions below are historical. Current committed baseline at resumption: 175d122; portrait alignment and the larger expandable interests heading are included.
+- Completed this revision: removed the separate copyright footer row, CV snapshot/source/date commentary, the dated CGPA qualifier and the Advanced NLP ongoing parenthetical. Kept the CV download and academic/employment dates.
+- Astro check: zero errors, warnings and hints. Release build and verification of 23 generated HTML files passed, including draft exclusion and unchanged CV checksum.
+- Browser verified education without snapshot/ongoing qualifiers, the retained CV download and a compact footer without copyright or source-note text. Screenshots: .qa/resume-cleanup.jpg and .qa/footer-cleanup.jpg. Restarted review server is available at http://127.0.0.1:4324/personal_page/ (earlier ports were occupied).
+- Outstanding deployment housekeeping: deploy.yml and pages.yml both trigger on pushes to main. Their Node versions are 22.23.4 and 24 respectively. Neither workflow was changed in this copy/layout revision.
+- The explanatory note remains a local-review draft; publication of that note still requires author review.
+
 26 October 2026 · local redesign branch `redesign/butter-olive` · original baseline `d4c3cad`. No remote push, Pages-settings change, or deployment was performed.
 
 ## Build and content checks

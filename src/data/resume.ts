@@ -11,7 +11,7 @@ export const resume = {
     grade: 'CGPA: 8.01',
     coursework: [
       'Machine, Data and Learning',
-      'Advanced NLP (ongoing in September 2026 CV)',
+      'Advanced NLP',
       'Probability & Statistics',
       'Linear Algebra',
       'Statistical Methods in AI (self-study)',
@@ -60,5 +60,4 @@ export const resume = {
     'JEE Advanced 2024: All India Rank 3949.',
     'JEE Main 2024: All India Rank 1189; 99.93 percentile.',
   ],
-  snapshot: '15 September 2026',
 } as const;
